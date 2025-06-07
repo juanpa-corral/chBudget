@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -60,9 +61,11 @@ class _LoginWidgetState extends State<LoginWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(30.0, 40.0, 30.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(30.0, 60.0, 30.0, 0.0),
               child: Text(
-                'Welcome',
+                FFLocalizations.of(context).getText(
+                  '8y868dbs' /* Welcome */,
+                ),
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).displaySmall.override(
                       font: GoogleFonts.interTight(
@@ -86,7 +89,7 @@ class _LoginWidgetState extends State<LoginWidget> {
               alignment: AlignmentDirectional(1.0, 308.0),
               child: Container(
                 width: double.infinity,
-                height: 745.0,
+                height: 700.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).lettersAndIcons,
                   borderRadius: BorderRadius.only(
@@ -106,7 +109,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                         alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 80.0, 0.0, 80.0),
+                              0.0, 80.0, 0.0, 70.0),
                           child: Form(
                             key: _model.formKey,
                             autovalidateMode: AutovalidateMode.always,
@@ -123,7 +126,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 10.0),
                                         child: Text(
-                                          'Username Or Email',
+                                          FFLocalizations.of(context).getText(
+                                            'ate8burw' /* Username Or Email */,
+                                          ),
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -192,7 +197,10 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                         .labelMedium
                                                         .fontStyle,
                                               ),
-                                          hintText: 'example@example.com',
+                                          hintText: FFLocalizations.of(context)
+                                              .getText(
+                                            '85agzqic' /* example@example.com */,
+                                          ),
                                           hintStyle: FlutterFlowTheme.of(
                                                   context)
                                               .labelMedium
@@ -311,7 +319,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 10.0),
                                           child: Text(
-                                            'Password',
+                                            FFLocalizations.of(context).getText(
+                                              'b64o0ad8' /* Password */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -385,7 +395,11 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                               .labelMedium
                                                               .fontStyle,
                                                     ),
-                                            hintText: '*  *  *  *  *  *  *  *',
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              '7a8chkkq' /* *  *  *  *  *  *  *  * */,
+                                            ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
@@ -522,7 +536,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                           onPressed: () {
                             print('Button pressed ...');
                           },
-                          text: 'Log In',
+                          text: FFLocalizations.of(context).getText(
+                            'z025h3m8' /* Log In */,
+                          ),
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.6,
                             height: MediaQuery.sizeOf(context).height * 0.055,
@@ -563,37 +579,50 @@ class _LoginWidgetState extends State<LoginWidget> {
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               30.0, 0.0, 30.0, 0.0),
-                          child: Text(
-                            'Forgot Password?',
-                            textAlign: TextAlign.center,
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.inter(
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed(ForgotPasswordWidget.routeName);
+                            },
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                'pcxgotkk' /* Forgot Password? */,
+                              ),
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FontWeight.normal,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    color:
+                                        FlutterFlowTheme.of(context).lightGreen,
+                                    fontSize: 14.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .fontStyle,
                                   ),
-                                  color:
-                                      FlutterFlowTheme.of(context).lightGreen,
-                                  fontSize: 14.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.normal,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
+                            ),
                           ),
                         ),
                       ),
                       Align(
                         alignment: AlignmentDirectional(0.0, 0.0),
                         child: FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
+                          onPressed: () async {
+                            context.pushNamed(SignUpWidget.routeName);
                           },
-                          text: 'Sign Up',
+                          text: FFLocalizations.of(context).getText(
+                            'kcpgzfeg' /* Sign Up */,
+                          ),
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.6,
                             height: MediaQuery.sizeOf(context).height * 0.055,
@@ -635,7 +664,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               30.0, 0.0, 30.0, 0.0),
                           child: Text(
-                            'Use Fingerprint To Access',
+                            FFLocalizations.of(context).getText(
+                              'v3l7yi7b' /* Use Fingerprint To Access */,
+                            ),
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -663,7 +694,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               30.0, 0.0, 30.0, 0.0),
                           child: Text(
-                            'or sign up with',
+                            FFLocalizations.of(context).getText(
+                              '1lfmjhyz' /* or sign up with */,
+                            ),
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -729,7 +762,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     30.0, 0.0, 5.0, 0.0),
                                 child: Text(
-                                  'Don\'t have an account?',
+                                  FFLocalizations.of(context).getText(
+                                    '6dz8m4ox' /* Don't have an account? */,
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -754,7 +789,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                               ),
                             ),
                             Text(
-                              'Sign Up',
+                              FFLocalizations.of(context).getText(
+                                '4d48h08q' /* Sign Up */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(

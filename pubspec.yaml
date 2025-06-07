@@ -1,4 +1,4 @@
-name: ch_wallet
+name: ch_budget
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -47,6 +47,8 @@ dependencies:
   path_provider_linux: 2.2.1
   path_provider_platform_interface: 2.1.2
   path_provider_windows: 2.3.0
+  percent_indicator: 4.2.2
+  pin_code_fields: 8.0.1
   provider: 6.1.2
   shared_preferences: 2.3.2
   shared_preferences_android: 2.3.2

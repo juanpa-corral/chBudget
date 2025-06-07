@@ -1,4 +1,4 @@
-package com.mycompany.chwallet
+package com.mycompany.chbudget
 
 import io.flutter.embedding.android.FlutterActivity
 

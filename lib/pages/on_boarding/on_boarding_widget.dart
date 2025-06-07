@@ -179,7 +179,10 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                                                       LaunchAWidget.routeName);
                                                 },
                                                 child: Text(
-                                                  'Next',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'x7rqhl3f' /* Next */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .displaySmall

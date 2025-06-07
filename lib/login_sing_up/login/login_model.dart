@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'login_widget.dart' show LoginWidget;
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,9 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   String? Function(BuildContext, String?)? textController1Validator;
   String? _textController1Validator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'example@example.com is required';
+      return FFLocalizations.of(context).getText(
+        'mbbus3yr' /* example@example.com is require... */,
+      );
     }
 
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
@@ -28,7 +31,9 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   String? Function(BuildContext, String?)? textController2Validator;
   String? _textController2Validator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return '*  *  *  *  *  *  *  *  is required';
+      return FFLocalizations.of(context).getText(
+        '1ffl8x2a' /* *  *  *  *  *  *  *  *  is req... */,
+      );
     }
 
     return null;

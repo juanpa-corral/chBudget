@@ -1,4 +1,4 @@
-# chWallet
+# chBudget
 
 A new Flutter project.
 

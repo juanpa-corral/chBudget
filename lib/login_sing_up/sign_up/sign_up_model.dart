@@ -21,7 +21,9 @@ class SignUpModel extends FlutterFlowModel<SignUpWidget> {
   String? Function(BuildContext, String?)? textController3Validator;
   String? _textController3Validator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'example@example.com is required';
+      return FFLocalizations.of(context).getText(
+        'nowqgphd' /* example@example.com is require... */,
+      );
     }
 
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
@@ -37,7 +39,9 @@ class SignUpModel extends FlutterFlowModel<SignUpWidget> {
   String? Function(BuildContext, String?)? textController4Validator;
   String? _textController4Validator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return '*  *  *  *  *  *  *  *  is required';
+      return FFLocalizations.of(context).getText(
+        'hf6isse5' /* *  *  *  *  *  *  *  *  is req... */,
+      );
     }
 
     return null;

@@ -75,7 +75,9 @@ class _LaunchBWidgetState extends State<LaunchBWidget> {
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 0.0),
                   child: Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. ',
+                    FFLocalizations.of(context).getText(
+                      'l1vqssgq' /* Lorem ipsum dolor sit amet, co... */,
+                    ),
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           font: GoogleFonts.inter(
@@ -111,7 +113,9 @@ class _LaunchBWidgetState extends State<LaunchBWidget> {
                     onPressed: () async {
                       context.pushNamed(LoginWidget.routeName);
                     },
-                    text: 'Log In',
+                    text: FFLocalizations.of(context).getText(
+                      '7h3dnb2g' /* Log In */,
+                    ),
                     options: FFButtonOptions(
                       width: MediaQuery.sizeOf(context).width * 0.6,
                       height: MediaQuery.sizeOf(context).height * 0.06,
@@ -155,7 +159,9 @@ class _LaunchBWidgetState extends State<LaunchBWidget> {
                     onPressed: () async {
                       context.pushNamed(SignUpWidget.routeName);
                     },
-                    text: 'Sign Up',
+                    text: FFLocalizations.of(context).getText(
+                      'sod6fj5x' /* Sign Up */,
+                    ),
                     options: FFButtonOptions(
                       width: MediaQuery.sizeOf(context).width * 0.6,
                       height: MediaQuery.sizeOf(context).height * 0.06,

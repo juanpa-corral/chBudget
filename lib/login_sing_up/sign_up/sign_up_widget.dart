@@ -72,7 +72,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(30.0, 40.0, 30.0, 0.0),
               child: Text(
-                'Create Account',
+                FFLocalizations.of(context).getText(
+                  'izd1ivyj' /* Create Account */,
+                ),
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).displaySmall.override(
                       font: GoogleFonts.interTight(
@@ -133,7 +135,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 10.0),
                                         child: Text(
-                                          'Full Name',
+                                          FFLocalizations.of(context).getText(
+                                            'n3u9kkga' /* Full Name */,
+                                          ),
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -208,7 +212,11 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                               .labelMedium
                                                               .fontStyle,
                                                     ),
-                                            hintText: 'Juanito Sarmiento',
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'nydodra6' /* Juanito Sarmiento */,
+                                            ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
@@ -328,7 +336,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 10.0),
                                         child: Text(
-                                          'Mobile Number',
+                                          FFLocalizations.of(context).getText(
+                                            'fm63n2s5' /* Mobile Number */,
+                                          ),
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -403,7 +413,11 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                               .labelMedium
                                                               .fontStyle,
                                                     ),
-                                            hintText: '+57 1234567890',
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              '7bu1khaw' /* +57 1234567890 */,
+                                            ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
@@ -523,7 +537,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 10.0),
                                         child: Text(
-                                          'Email',
+                                          FFLocalizations.of(context).getText(
+                                            '8hypmex5' /* Email */,
+                                          ),
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -592,7 +608,10 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                         .labelMedium
                                                         .fontStyle,
                                               ),
-                                          hintText: 'example@example.com',
+                                          hintText: FFLocalizations.of(context)
+                                              .getText(
+                                            '1jtdi4bs' /* example@example.com */,
+                                          ),
                                           hintStyle: FlutterFlowTheme.of(
                                                   context)
                                               .labelMedium
@@ -711,7 +730,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 10.0),
                                           child: Text(
-                                            'Password',
+                                            FFLocalizations.of(context).getText(
+                                              'd7qj4uoc' /* Password */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -785,7 +806,11 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                               .labelMedium
                                                               .fontStyle,
                                                     ),
-                                            hintText: '*  *  *  *  *  *  *  *',
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              '9uh1uzk1' /* *  *  *  *  *  *  *  * */,
+                                            ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
@@ -925,7 +950,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 10.0),
                                           child: Text(
-                                            'Confirm Password',
+                                            FFLocalizations.of(context).getText(
+                                              'ilx4btp6' /* Confirm Password */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -999,7 +1026,11 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                               .labelMedium
                                                               .fontStyle,
                                                     ),
-                                            hintText: '*  *  *  *  *  *  *  *',
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              '1xn90owi' /* *  *  *  *  *  *  *  * */,
+                                            ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
@@ -1136,7 +1167,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               30.0, 0.0, 30.0, 20.0),
                           child: Text(
-                            'By continuining, you agree to Terms of Use and Privacy Policy.',
+                            FFLocalizations.of(context).getText(
+                              'tsapxhxe' /* By continuining, you agree to ... */,
+                            ),
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -1168,7 +1201,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             onPressed: () {
                               print('Button pressed ...');
                             },
-                            text: 'Sign Up',
+                            text: FFLocalizations.of(context).getText(
+                              '2c7r9g6s' /* Sign Up */,
+                            ),
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 0.6,
                               height: MediaQuery.sizeOf(context).height * 0.055,
@@ -1211,7 +1246,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               30.0, 0.0, 30.0, 10.0),
                           child: Text(
-                            'or sign up with',
+                            FFLocalizations.of(context).getText(
+                              '4wms5r8g' /* or sign up with */,
+                            ),
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -1281,7 +1318,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     30.0, 0.0, 5.0, 0.0),
                                 child: Text(
-                                  'Already have an account?',
+                                  FFLocalizations.of(context).getText(
+                                    'mjf6ilhi' /* Already have an account? */,
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -1314,7 +1353,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 context.pushNamed(LoginWidget.routeName);
                               },
                               child: Text(
-                                'Log In',
+                                FFLocalizations.of(context).getText(
+                                  'exx0s8fg' /* Log In */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
