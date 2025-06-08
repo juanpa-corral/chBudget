@@ -1,9 +1,11 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,7 +13,12 @@ import 'security_pin_model.dart';
 export 'security_pin_model.dart';
 
 class SecurityPinWidget extends StatefulWidget {
-  const SecurityPinWidget({super.key});
+  const SecurityPinWidget({
+    super.key,
+    required this.emailUser,
+  });
+
+  final String? emailUser;
 
   static String routeName = 'SecurityPin';
   static String routePath = '/securityPin';
@@ -162,7 +169,8 @@ class _SecurityPinWidgetState extends State<SecurityPinWidget> {
                         enablePinAutofill: true,
                         errorTextSpace: 16.0,
                         showCursor: true,
-                        cursorColor: FlutterFlowTheme.of(context).primary,
+                        cursorColor:
+                            FlutterFlowTheme.of(context).lettersAndIcons,
                         obscureText: false,
                         hintCharacter: '●',
                         keyboardType: TextInputType.number,
@@ -194,7 +202,77 @@ class _SecurityPinWidgetState extends State<SecurityPinWidget> {
                               0.0, 50.0, 0.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              context.pushNamed(NewPasswordWidget.routeName);
+                              _model.verifiedUserDoc =
+                                  await queryUsersRecordOnce(
+                                queryBuilder: (usersRecord) => usersRecord
+                                    .where(
+                                      'email',
+                                      isEqualTo: widget.emailUser,
+                                    )
+                                    .where(
+                                      'verification_code',
+                                      isEqualTo: _model.pinCodeController!.text,
+                                    ),
+                                singleRecord: true,
+                              ).then((s) => s.firstOrNull);
+                              if (_model.verifiedUserDoc?.reference != null) {
+                                await _model.verifiedUserDoc!.reference.update({
+                                  ...createUsersRecordData(
+                                    verificationCode: '',
+                                  ),
+                                  ...mapToFirestore(
+                                    {
+                                      'code_expiry_timestamp':
+                                          FieldValue.delete(),
+                                    },
+                                  ),
+                                });
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'Code verify Successfully!',
+                                      style: GoogleFonts.interTight(
+                                        color: FlutterFlowTheme.of(context)
+                                            .lightGreen,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16.0,
+                                      ),
+                                    ),
+                                    duration: Duration(milliseconds: 4000),
+                                    backgroundColor:
+                                        FlutterFlowTheme.of(context).mainGreen,
+                                  ),
+                                );
+
+                                context.pushNamed(
+                                  NewPasswordWidget.routeName,
+                                  queryParameters: {
+                                    'emailUser': serializeParam(
+                                      widget.emailUser,
+                                      ParamType.String,
+                                    ),
+                                  }.withoutNulls,
+                                );
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'Invalid Code! Retry!',
+                                      style: GoogleFonts.interTight(
+                                        color: FlutterFlowTheme.of(context)
+                                            .lightGreen,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16.0,
+                                      ),
+                                    ),
+                                    duration: Duration(milliseconds: 4000),
+                                    backgroundColor:
+                                        FlutterFlowTheme.of(context).mainGreen,
+                                  ),
+                                );
+                              }
+
+                              safeSetState(() {});
                             },
                             text: FFLocalizations.of(context).getText(
                               'jjwg9cw2' /* Accept */,

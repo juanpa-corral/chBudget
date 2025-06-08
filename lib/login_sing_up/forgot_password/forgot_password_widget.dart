@@ -1,11 +1,17 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'forgot_password_model.dart';
 export 'forgot_password_model.dart';
 
@@ -29,8 +35,8 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
     super.initState();
     _model = createModel(context, () => ForgotPasswordModel());
 
-    _model.textController ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
+    _model.emailResetPassFieldTextController ??= TextEditingController();
+    _model.emailResetPassFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -44,6 +50,8 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -226,8 +234,10 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
                                       child: TextFormField(
-                                        controller: _model.textController,
-                                        focusNode: _model.textFieldFocusNode,
+                                        controller: _model
+                                            .emailResetPassFieldTextController,
+                                        focusNode:
+                                            _model.emailResetPassFieldFocusNode,
                                         autofocus: false,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -346,6 +356,9 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                                         .bodyMedium
                                                         .fontStyle,
                                               ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .lettersAndIcons,
                                               letterSpacing: 0.0,
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
@@ -358,9 +371,9 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                             ),
                                         cursorColor:
                                             FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                                .lettersAndIcons,
                                         validator: _model
-                                            .textControllerValidator
+                                            .emailResetPassFieldTextControllerValidator
                                             .asValidator(context),
                                       ),
                                     ),
@@ -375,7 +388,68 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                         alignment: AlignmentDirectional(0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            context.pushNamed(SecurityPinWidget.routeName);
+                            _model.userDocument = await queryUsersRecordOnce(
+                              queryBuilder: (usersRecord) => usersRecord.where(
+                                'email',
+                                isEqualTo: _model
+                                    .emailResetPassFieldTextController.text,
+                              ),
+                              singleRecord: true,
+                            ).then((s) => s.firstOrNull);
+                            if (_model.userDocument?.reference != null) {
+                              FFAppState().codeResetPass =
+                                  random_data.randomInteger(100000, 999999);
+
+                              await _model.userDocument!.reference
+                                  .update(createUsersRecordData(
+                                verificationCode:
+                                    FFAppState().codeResetPass.toString(),
+                                codeExpiryTimestamp: getCurrentTimestamp,
+                              ));
+                              await launchUrl(Uri(
+                                  scheme: 'mailto',
+                                  path: _model
+                                      .emailResetPassFieldTextController.text,
+                                  query: {
+                                    'subject': 'Tu codigo de verificación',
+                                    'body':
+                                        'Hola, tu código para restablecer la contraseña es: ${FFAppState().codeResetPass.toString()}',
+                                  }
+                                      .entries
+                                      .map((MapEntry<String, String> e) =>
+                                          '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+                                      .join('&')));
+
+                              context.pushNamed(
+                                SecurityPinWidget.routeName,
+                                queryParameters: {
+                                  'emailUser': serializeParam(
+                                    _model
+                                        .emailResetPassFieldTextController.text,
+                                    ParamType.String,
+                                  ),
+                                }.withoutNulls,
+                              );
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                    'Usuario No Encontrado',
+                                    style: GoogleFonts.interTight(
+                                      color: FlutterFlowTheme.of(context)
+                                          .lightGreen,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 16.0,
+                                    ),
+                                  ),
+                                  duration: Duration(milliseconds: 4000),
+                                  backgroundColor:
+                                      FlutterFlowTheme.of(context).mainGreen,
+                                ),
+                              );
+                            }
+
+                            safeSetState(() {});
                           },
                           text: FFLocalizations.of(context).getText(
                             'p1bb0ujz' /* Next Step */,
@@ -418,8 +492,8 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                       Align(
                         alignment: AlignmentDirectional(0.0, 0.0),
                         child: FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
+                          onPressed: () async {
+                            context.pushNamed(SignUpWidget.routeName);
                           },
                           text: FFLocalizations.of(context).getText(
                             'ci9xhesj' /* Sign Up */,
@@ -471,8 +545,16 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                               color: FlutterFlowTheme.of(context).info,
                               size: 24.0,
                             ),
-                            onPressed: () {
-                              print('IconButton pressed ...');
+                            onPressed: () async {
+                              GoRouter.of(context).prepareAuthEvent();
+                              final user =
+                                  await authManager.signInWithGoogle(context);
+                              if (user == null) {
+                                return;
+                              }
+
+                              context.goNamedAuth(
+                                  HomeWidget.routeName, context.mounted);
                             },
                           ),
                           FlutterFlowIconButton(
@@ -528,28 +610,37 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                 ),
                               ),
                             ),
-                            Text(
-                              FFLocalizations.of(context).getText(
-                                'hrrrzxc5' /* Sign Up */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed(SignUpWidget.routeName);
+                              },
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  'hrrrzxc5' /* Sign Up */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FontWeight.w300,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .mainGreen,
+                                      fontSize: 12.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.w300,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .fontStyle,
                                     ),
-                                    color:
-                                        FlutterFlowTheme.of(context).mainGreen,
-                                    fontSize: 12.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w300,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                              ),
                             ),
                           ],
                         ),

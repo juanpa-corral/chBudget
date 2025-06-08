@@ -237,7 +237,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
     '1lfmjhyz': {
-      'en': 'or sign up with',
+      'en': 'or Log In with',
       'es': '',
     },
     '6dz8m4ox': {
@@ -261,6 +261,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'n3u9kkga': {
       'en': 'Full Name',
+      'es': '',
+    },
+    'l5dqnc3p': {
+      'en': '',
       'es': '',
     },
     'nydodra6': {
@@ -406,36 +410,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'New Password',
       'es': '',
     },
-    '9i5qe4zu': {
-      'en': 'New Password',
-      'es': '',
-    },
-    '4bi2dxk5': {
-      'en': '*  *  *  *  *  *  *  *',
-      'es': '',
-    },
-    '662bxesz': {
-      'en': 'Confirm New Password',
-      'es': '',
-    },
-    'hsljthd5': {
-      'en': '*  *  *  *  *  *  *  *',
-      'es': '',
-    },
-    'rshvteee': {
-      'en': 'example@example.com is required',
-      'es': '',
-    },
-    '9l4krky3': {
-      'en': 'Please choose an option from the dropdown',
-      'es': '',
-    },
-    'vz1ko0qt': {
-      'en': '*  *  *  *  *  *  *  *  is required',
-      'es': '',
-    },
-    '1c9ngnmw': {
-      'en': 'Please choose an option from the dropdown',
+    'shgld569': {
+      'en': 'Send Email for Change Passwrod in a security Way',
       'es': '',
     },
     '3jr4dv7k': {
@@ -485,7 +461,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // SuccesfullyChanged
   {
     '1it91tbe': {
-      'en': 'Password Has been Changed successfully',
+      'en':
+          'Email Reset Password Has been sent Successfully! Try Log In Again!',
       'es': '',
     },
     'gfxv1h1k': {
@@ -563,8 +540,304 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '30% Of Your Expenses, Looks Good',
       'es': '',
     },
+    'jkrc5334': {
+      'en': '',
+      'es': '',
+    },
+    'fvwokzwm': {
+      'en': 'Savings\nOn Goals',
+      'es': '',
+    },
+    '9fmpyqi1': {
+      'en': 'Revenue Last Week',
+      'es': '',
+    },
+    'gotp7lcl': {
+      'en': '\$6.000.000',
+      'es': '',
+    },
+    'cclkxpdi': {
+      'en': 'Food Last Week',
+      'es': '',
+    },
+    'z7uhbjcc': {
+      'en': '-\$2.000.000',
+      'es': '',
+    },
+    'lvew9n8h': {
+      'en': 'Daily',
+      'es': '',
+    },
+    'tvpq3h42': {
+      'en': 'Weekly',
+      'es': '',
+    },
+    'usra22tp': {
+      'en': 'Monthly',
+      'es': '',
+    },
+    'emuf2l7x': {
+      'en': '',
+      'es': '',
+    },
+    'tuk63ggl': {
+      'en': 'Salary',
+      'es': '',
+    },
+    'wpq365w2': {
+      'en': 'April 30',
+      'es': '',
+    },
+    'az2zggus': {
+      'en': 'Monthly',
+      'es': '',
+    },
+    'dhv5k7su': {
+      'en': '\$6.000.000',
+      'es': '',
+    },
+    '1q075k4k': {
+      'en': 'Salary',
+      'es': '',
+    },
+    'taia4rd7': {
+      'en': 'April 30',
+      'es': '',
+    },
+    'f0euwdwi': {
+      'en': 'Monthly',
+      'es': '',
+    },
+    'ytiidynw': {
+      'en': '\$6.000.000',
+      'es': '',
+    },
+    'mbx8trzv': {
+      'en': 'Salary',
+      'es': '',
+    },
+    '76m2nykb': {
+      'en': 'April 30',
+      'es': '',
+    },
+    's64dkkyw': {
+      'en': 'Monthly',
+      'es': '',
+    },
+    'plcqs5t5': {
+      'en': '\$6.000.000',
+      'es': '',
+    },
+    'w4e70uyg': {
+      'en': 'Salary',
+      'es': '',
+    },
+    'u3cphaez': {
+      'en': 'April 30',
+      'es': '',
+    },
+    'up2rbqav': {
+      'en': 'Monthly',
+      'es': '',
+    },
+    '68ane540': {
+      'en': '\$6.000.000',
+      'es': '',
+    },
     '3lg3rb5f': {
       'en': 'Home',
+      'es': '',
+    },
+  },
+  // Transaction
+  {
+    '3yez6dr7': {
+      'en': 'Hi, Welcome Back',
+      'es': '',
+    },
+    'wmuyyf9b': {
+      'en': 'Juan Pablo Corral',
+      'es': '',
+    },
+    'kpkxm4hp': {
+      'en': 'Total Balance',
+      'es': '',
+    },
+    'np5gboru': {
+      'en': '\$8.000.000',
+      'es': '',
+    },
+    'autb5kuz': {
+      'en': 'Total Balance',
+      'es': '',
+    },
+    'qgod83a6': {
+      'en': '-\$8.000.000',
+      'es': '',
+    },
+    'cs0rz9db': {
+      'en': '',
+      'es': '',
+    },
+    '6n97jsh1': {
+      'en': '\$20.000.000',
+      'es': '',
+    },
+    'cig1n8wg': {
+      'en': '30%',
+      'es': '',
+    },
+    'ezyhmig1': {
+      'en': '30% Of Your Expenses, Looks Good',
+      'es': '',
+    },
+    '9dxl1mkc': {
+      'en': 'Transaction',
+      'es': '',
+    },
+  },
+  // Analysis
+  {
+    'wdwjju6y': {
+      'en': 'Hi, Welcome Back',
+      'es': '',
+    },
+    'awz7gjvv': {
+      'en': 'Juan Pablo Corral',
+      'es': '',
+    },
+    '4peuomjm': {
+      'en': 'Total Balance',
+      'es': '',
+    },
+    'p7102ans': {
+      'en': '\$8.000.000',
+      'es': '',
+    },
+    'c20752f4': {
+      'en': 'Total Balance',
+      'es': '',
+    },
+    '03uovtod': {
+      'en': '-\$8.000.000',
+      'es': '',
+    },
+    'p45d45fy': {
+      'en': '',
+      'es': '',
+    },
+    'x6vphc92': {
+      'en': '\$20.000.000',
+      'es': '',
+    },
+    'dmb216ra': {
+      'en': '30%',
+      'es': '',
+    },
+    'afsazcg3': {
+      'en': '30% Of Your Expenses, Looks Good',
+      'es': '',
+    },
+    'v9g1t6g7': {
+      'en': 'Analysis',
+      'es': '',
+    },
+  },
+  // Categories
+  {
+    '65cm3sct': {
+      'en': 'Hi, Welcome Back',
+      'es': '',
+    },
+    '2bifgg1t': {
+      'en': 'Juan Pablo Corral',
+      'es': '',
+    },
+    'x74d8ugz': {
+      'en': 'Total Balance',
+      'es': '',
+    },
+    'kd0hrs86': {
+      'en': '\$8.000.000',
+      'es': '',
+    },
+    'ovinhy47': {
+      'en': 'Total Balance',
+      'es': '',
+    },
+    'rg5qspnn': {
+      'en': '-\$8.000.000',
+      'es': '',
+    },
+    'jgjequc1': {
+      'en': '',
+      'es': '',
+    },
+    'a3jtqdeu': {
+      'en': '\$20.000.000',
+      'es': '',
+    },
+    '0yft60fp': {
+      'en': '30%',
+      'es': '',
+    },
+    'u2k1rjon': {
+      'en': '30% Of Your Expenses, Looks Good',
+      'es': '',
+    },
+    'k794dlnv': {
+      'en': 'Categories',
+      'es': '',
+    },
+  },
+  // Profile
+  {
+    'x28194pw': {
+      'en': 'Hi, Welcome Back',
+      'es': '',
+    },
+    't5plsjp0': {
+      'en': 'Juan Pablo Corral',
+      'es': '',
+    },
+    'inh4z2uo': {
+      'en': 'Total Balance',
+      'es': '',
+    },
+    '41w4xt3t': {
+      'en': '\$8.000.000',
+      'es': '',
+    },
+    't3o78l7n': {
+      'en': 'Total Balance',
+      'es': '',
+    },
+    'd7yhl8fn': {
+      'en': '-\$8.000.000',
+      'es': '',
+    },
+    '9mbhn4xc': {
+      'en': '',
+      'es': '',
+    },
+    'ovqy36j2': {
+      'en': '\$20.000.000',
+      'es': '',
+    },
+    'iimmlqeh': {
+      'en': '30%',
+      'es': '',
+    },
+    '4ptilsjx': {
+      'en': '30% Of Your Expenses, Looks Good',
+      'es': '',
+    },
+    '3q8kwztc': {
+      'en': 'Log Out',
+      'es': '',
+    },
+    'lpjdikm8': {
+      'en': 'Profile',
       'es': '',
     },
   },

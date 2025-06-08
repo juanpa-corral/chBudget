@@ -176,7 +176,17 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                      LaunchAWidget.routeName);
+                                                    LaunchAWidget.routeName,
+                                                    extra: <String, dynamic>{
+                                                      kTransitionInfoKey:
+                                                          TransitionInfo(
+                                                        hasTransition: true,
+                                                        transitionType:
+                                                            PageTransitionType
+                                                                .rightToLeft,
+                                                      ),
+                                                    },
+                                                  );
                                                 },
                                                 child: Text(
                                                   FFLocalizations.of(context)

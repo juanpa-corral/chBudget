@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'forgot_password_widget.dart' show ForgotPasswordWidget;
@@ -7,11 +8,13 @@ class ForgotPasswordModel extends FlutterFlowModel<ForgotPasswordWidget> {
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
-  String? _textControllerValidator(BuildContext context, String? val) {
+  // State field(s) for emailResetPassField widget.
+  FocusNode? emailResetPassFieldFocusNode;
+  TextEditingController? emailResetPassFieldTextController;
+  String? Function(BuildContext, String?)?
+      emailResetPassFieldTextControllerValidator;
+  String? _emailResetPassFieldTextControllerValidator(
+      BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         't1ffpdp6' /* example@example.com is require... */,
@@ -24,14 +27,18 @@ class ForgotPasswordModel extends FlutterFlowModel<ForgotPasswordWidget> {
     return null;
   }
 
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  UsersRecord? userDocument;
+
   @override
   void initState(BuildContext context) {
-    textControllerValidator = _textControllerValidator;
+    emailResetPassFieldTextControllerValidator =
+        _emailResetPassFieldTextControllerValidator;
   }
 
   @override
   void dispose() {
-    textFieldFocusNode?.dispose();
-    textController?.dispose();
+    emailResetPassFieldFocusNode?.dispose();
+    emailResetPassFieldTextController?.dispose();
   }
 }

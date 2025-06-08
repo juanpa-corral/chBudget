@@ -1,3 +1,5 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -29,20 +31,20 @@ class _SignUpWidgetState extends State<SignUpWidget> {
     super.initState();
     _model = createModel(context, () => SignUpModel());
 
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.fullNameFieldTextController ??= TextEditingController();
+    _model.fullNameFieldFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.numberFieldTextController ??= TextEditingController();
+    _model.numberFieldFocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.emailFieldTextController ??= TextEditingController();
+    _model.emailFieldFocusNode ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController();
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.passwordFieldTextController ??= TextEditingController();
+    _model.passwordFieldFocusNode ??= FocusNode();
 
-    _model.textController5 ??= TextEditingController();
-    _model.textFieldFocusNode5 ??= FocusNode();
+    _model.confirmPassFieldTextController ??= TextEditingController();
+    _model.confirmPassFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -178,8 +180,10 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         child: TextFormField(
-                                          controller: _model.textController1,
-                                          focusNode: _model.textFieldFocusNode1,
+                                          controller: _model
+                                              .fullNameFieldTextController,
+                                          focusNode:
+                                              _model.fullNameFieldFocusNode,
                                           autofocus: false,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -200,6 +204,10 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                                 .labelMedium
                                                                 .fontStyle,
                                                       ),
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .lettersAndIcons,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
                                                           FlutterFlowTheme.of(
@@ -217,37 +225,29 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                     .getText(
                                               'nydodra6' /* Juanito Sarmiento */,
                                             ),
-                                            hintStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .override(
-                                                      font: GoogleFonts.inter(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMedium
-                                                                .fontStyle,
-                                                      ),
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .backgroundDarkModeAndLetters,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .fontStyle,
-                                                    ),
+                                            hintStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .labelMedium
+                                                .override(
+                                                  font: GoogleFonts.inter(
+                                                    fontWeight: FontWeight.w500,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .lettersAndIcons,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w500,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
@@ -305,6 +305,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                           .bodyMedium
                                                           .fontStyle,
                                                 ),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .lettersAndIcons,
                                                 letterSpacing: 0.0,
                                                 fontWeight:
                                                     FlutterFlowTheme.of(context)
@@ -317,9 +320,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                               ),
                                           cursorColor:
                                               FlutterFlowTheme.of(context)
-                                                  .primaryText,
+                                                  .lettersAndIcons,
                                           validator: _model
-                                              .textController1Validator
+                                              .fullNameFieldTextControllerValidator
                                               .asValidator(context),
                                         ),
                                       ),
@@ -379,8 +382,10 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         child: TextFormField(
-                                          controller: _model.textController2,
-                                          focusNode: _model.textFieldFocusNode2,
+                                          controller:
+                                              _model.numberFieldTextController,
+                                          focusNode:
+                                              _model.numberFieldFocusNode,
                                           autofocus: false,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -495,33 +500,33 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                               .bodyMedium
                                               .override(
                                                 font: GoogleFonts.inter(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
+                                                  fontWeight: FontWeight.w500,
                                                   fontStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .bodyMedium
                                                           .fontStyle,
                                                 ),
-                                                letterSpacing: 0.0,
-                                                fontWeight:
+                                                color:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
+                                                        .lettersAndIcons,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
                                                 fontStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .fontStyle,
                                               ),
+                                          keyboardType: TextInputType.number,
                                           cursorColor:
                                               FlutterFlowTheme.of(context)
-                                                  .primaryText,
+                                                  .lettersAndIcons,
                                           validator: _model
-                                              .textController2Validator
+                                              .numberFieldTextControllerValidator
                                               .asValidator(context),
+                                          inputFormatters: [
+                                            _model.numberFieldMask
+                                          ],
                                         ),
                                       ),
                                     ),
@@ -576,8 +581,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
                                       child: TextFormField(
-                                        controller: _model.textController3,
-                                        focusNode: _model.textFieldFocusNode3,
+                                        controller:
+                                            _model.emailFieldTextController,
+                                        focusNode: _model.emailFieldFocusNode,
                                         autofocus: false,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -687,20 +693,17 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                             .bodyMedium
                                             .override(
                                               font: GoogleFonts.inter(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
+                                                fontWeight: FontWeight.w500,
                                                 fontStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .fontStyle,
                                               ),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
+                                              color:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
+                                                      .lettersAndIcons,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w500,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -708,9 +711,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                             ),
                                         cursorColor:
                                             FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                                .lettersAndIcons,
                                         validator: _model
-                                            .textController3Validator
+                                            .emailFieldTextControllerValidator
                                             .asValidator(context),
                                       ),
                                     ),
@@ -771,11 +774,13 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         child: TextFormField(
-                                          controller: _model.textController4,
-                                          focusNode: _model.textFieldFocusNode4,
+                                          controller: _model
+                                              .passwordFieldTextController,
+                                          focusNode:
+                                              _model.passwordFieldFocusNode,
                                           autofocus: false,
                                           obscureText:
-                                              !_model.passwordVisibility1,
+                                              !_model.passwordFieldVisibility,
                                           decoration: InputDecoration(
                                             isDense: true,
                                             labelStyle:
@@ -886,16 +891,20 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                             suffixIcon: InkWell(
                                               onTap: () => safeSetState(
                                                 () => _model
-                                                        .passwordVisibility1 =
-                                                    !_model.passwordVisibility1,
+                                                        .passwordFieldVisibility =
+                                                    !_model
+                                                        .passwordFieldVisibility,
                                               ),
                                               focusNode: FocusNode(
                                                   skipTraversal: true),
                                               child: Icon(
-                                                _model.passwordVisibility1
+                                                _model.passwordFieldVisibility
                                                     ? Icons.visibility_outlined
                                                     : Icons
                                                         .visibility_off_outlined,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .blueButton,
                                                 size: 25.0,
                                               ),
                                             ),
@@ -904,22 +913,18 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                               .bodyMedium
                                               .override(
                                                 font: GoogleFonts.inter(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
+                                                  fontWeight: FontWeight.w500,
                                                   fontStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .bodyMedium
                                                           .fontStyle,
                                                 ),
-                                                letterSpacing: 0.0,
-                                                fontWeight:
+                                                color:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
+                                                        .lettersAndIcons,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
                                                 fontStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -927,9 +932,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                               ),
                                           cursorColor:
                                               FlutterFlowTheme.of(context)
-                                                  .primaryText,
+                                                  .lettersAndIcons,
                                           validator: _model
-                                              .textController4Validator
+                                              .passwordFieldTextControllerValidator
                                               .asValidator(context),
                                         ),
                                       ),
@@ -991,11 +996,13 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         child: TextFormField(
-                                          controller: _model.textController5,
-                                          focusNode: _model.textFieldFocusNode5,
+                                          controller: _model
+                                              .confirmPassFieldTextController,
+                                          focusNode:
+                                              _model.confirmPassFieldFocusNode,
                                           autofocus: false,
-                                          obscureText:
-                                              !_model.passwordVisibility2,
+                                          obscureText: !_model
+                                              .confirmPassFieldVisibility,
                                           decoration: InputDecoration(
                                             isDense: true,
                                             labelStyle:
@@ -1106,16 +1113,20 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                             suffixIcon: InkWell(
                                               onTap: () => safeSetState(
                                                 () => _model
-                                                        .passwordVisibility2 =
-                                                    !_model.passwordVisibility2,
+                                                        .confirmPassFieldVisibility =
+                                                    !_model
+                                                        .confirmPassFieldVisibility,
                                               ),
                                               focusNode: FocusNode(
                                                   skipTraversal: true),
                                               child: Icon(
-                                                _model.passwordVisibility2
+                                                _model.confirmPassFieldVisibility
                                                     ? Icons.visibility_outlined
                                                     : Icons
                                                         .visibility_off_outlined,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .blueButton,
                                                 size: 25.0,
                                               ),
                                             ),
@@ -1124,22 +1135,18 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                               .bodyMedium
                                               .override(
                                                 font: GoogleFonts.inter(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
+                                                  fontWeight: FontWeight.w500,
                                                   fontStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .bodyMedium
                                                           .fontStyle,
                                                 ),
-                                                letterSpacing: 0.0,
-                                                fontWeight:
+                                                color:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
+                                                        .lettersAndIcons,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
                                                 fontStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -1147,9 +1154,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                               ),
                                           cursorColor:
                                               FlutterFlowTheme.of(context)
-                                                  .primaryText,
+                                                  .lettersAndIcons,
                                           validator: _model
-                                              .textController5Validator
+                                              .confirmPassFieldTextControllerValidator
                                               .asValidator(context),
                                         ),
                                       ),
@@ -1198,8 +1205,41 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 20.0),
                           child: FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              GoRouter.of(context).prepareAuthEvent();
+                              if (_model.passwordFieldTextController.text !=
+                                  _model.confirmPassFieldTextController.text) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'Passwords don\'t match!',
+                                    ),
+                                  ),
+                                );
+                                return;
+                              }
+
+                              final user =
+                                  await authManager.createAccountWithEmail(
+                                context,
+                                _model.emailFieldTextController.text,
+                                _model.passwordFieldTextController.text,
+                              );
+                              if (user == null) {
+                                return;
+                              }
+
+                              await UsersRecord.collection
+                                  .doc(user.uid)
+                                  .update(createUsersRecordData(
+                                    phoneNumber:
+                                        _model.numberFieldTextController.text,
+                                    displayName:
+                                        _model.fullNameFieldTextController.text,
+                                  ));
+
+                              context.goNamedAuth(
+                                  HomeWidget.routeName, context.mounted);
                             },
                             text: FFLocalizations.of(context).getText(
                               '2c7r9g6s' /* Sign Up */,
@@ -1286,8 +1326,16 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 color: FlutterFlowTheme.of(context).info,
                                 size: 24.0,
                               ),
-                              onPressed: () {
-                                print('IconButton pressed ...');
+                              onPressed: () async {
+                                GoRouter.of(context).prepareAuthEvent();
+                                final user =
+                                    await authManager.signInWithGoogle(context);
+                                if (user == null) {
+                                  return;
+                                }
+
+                                context.goNamedAuth(
+                                    HomeWidget.routeName, context.mounted);
                               },
                             ),
                             FlutterFlowIconButton(
@@ -1306,8 +1354,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            0.0, 0.0, 0.0, 100.0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 27.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,

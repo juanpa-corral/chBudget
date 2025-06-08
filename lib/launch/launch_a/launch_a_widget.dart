@@ -30,16 +30,7 @@ class _LaunchAWidgetState extends State<LaunchAWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await Future.delayed(const Duration(milliseconds: 2000));
 
-      context.pushNamed(
-        LaunchBWidget.routeName,
-        extra: <String, dynamic>{
-          kTransitionInfoKey: TransitionInfo(
-            hasTransition: true,
-            transitionType: PageTransitionType.bottomToTop,
-            duration: Duration(milliseconds: 1000),
-          ),
-        },
-      );
+      context.pushNamed(LaunchBWidget.routeName);
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));

@@ -56,34 +56,53 @@ class _SuccesfullyChangedWidgetState extends State<SuccesfullyChangedWidget> {
         key: scaffoldKey,
         backgroundColor:
             FlutterFlowTheme.of(context).backgroundDarkModeAndLetters,
-        body: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Align(
-              alignment: AlignmentDirectional(0.0, 0.0),
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
-                  child: Image.asset(
-                    'assets/images/Check_Progress.png',
-                    width: 200.0,
-                    height: 200.0,
-                    fit: BoxFit.cover,
+        body: InkWell(
+          splashColor: Colors.transparent,
+          focusColor: Colors.transparent,
+          hoverColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+          onTap: () async {
+            await Future.delayed(const Duration(milliseconds: 4000));
+
+            context.pushNamed(LoginWidget.routeName);
+          },
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Align(
+                alignment: AlignmentDirectional(0.0, 0.0),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      'assets/images/Check_Progress.png',
+                      width: 200.0,
+                      height: 200.0,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(60.0, 0.0, 60.0, 0.0),
-              child: Text(
-                FFLocalizations.of(context).getText(
-                  '1it91tbe' /* Password Has been Changed succ... */,
-                ),
-                textAlign: TextAlign.center,
-                style: FlutterFlowTheme.of(context).headlineSmall.override(
-                      font: GoogleFonts.interTight(
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(50.0, 0.0, 50.0, 0.0),
+                child: Text(
+                  FFLocalizations.of(context).getText(
+                    '1it91tbe' /* Email Reset Password Has been ... */,
+                  ),
+                  textAlign: TextAlign.center,
+                  style: FlutterFlowTheme.of(context).headlineSmall.override(
+                        font: GoogleFonts.interTight(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .headlineSmall
+                              .fontWeight,
+                          fontStyle: FlutterFlowTheme.of(context)
+                              .headlineSmall
+                              .fontStyle,
+                        ),
+                        color: FlutterFlowTheme.of(context).lightGreen,
+                        letterSpacing: 0.0,
                         fontWeight: FlutterFlowTheme.of(context)
                             .headlineSmall
                             .fontWeight,
@@ -91,16 +110,10 @@ class _SuccesfullyChangedWidgetState extends State<SuccesfullyChangedWidget> {
                             .headlineSmall
                             .fontStyle,
                       ),
-                      color: FlutterFlowTheme.of(context).lightGreen,
-                      letterSpacing: 0.0,
-                      fontWeight:
-                          FlutterFlowTheme.of(context).headlineSmall.fontWeight,
-                      fontStyle:
-                          FlutterFlowTheme.of(context).headlineSmall.fontStyle,
-                    ),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

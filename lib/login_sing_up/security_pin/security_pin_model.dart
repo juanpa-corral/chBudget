@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'security_pin_widget.dart' show SecurityPinWidget;
@@ -10,6 +11,8 @@ class SecurityPinModel extends FlutterFlowModel<SecurityPinWidget> {
   TextEditingController? pinCodeController;
   FocusNode? pinCodeFocusNode;
   String? Function(BuildContext, String?)? pinCodeControllerValidator;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  UsersRecord? verifiedUserDoc;
 
   @override
   void initState(BuildContext context) {

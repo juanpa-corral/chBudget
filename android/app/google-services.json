@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "236110493914",
+    "project_id": "ch-budget",
+    "storage_bucket": "ch-budget.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236110493914:android:b5303ea2b783e3baaf8de3",
+        "android_client_info": {
+          "package_name": "com.mycompany.chbudget"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236110493914-4eudi4gk13jphp3m4bsl7bhi5kolqll4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.chbudget",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "236110493914-l0okokli7cme7o6juh8fvhplvnssqorc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.chbudget",
+            "certificate_hash": "82ce447c75ad2cf2c5cbe223349c6b520b0951fb"
+          }
+        },
+        {
+          "client_id": "236110493914-11n8igbfbc6m38nmn1rag8ohvepi5agb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASGYTzlz7vEB5HKyW97uYd9A8x2t6oZR4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236110493914-11n8igbfbc6m38nmn1rag8ohvepi5agb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "236110493914-pur7ko73tl98jj8uh7fodbpi1b3nft8m.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.chbudget"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

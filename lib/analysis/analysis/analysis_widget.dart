@@ -5,28 +5,28 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'home_model.dart';
-export 'home_model.dart';
+import 'analysis_model.dart';
+export 'analysis_model.dart';
 
-class HomeWidget extends StatefulWidget {
-  const HomeWidget({super.key});
+class AnalysisWidget extends StatefulWidget {
+  const AnalysisWidget({super.key});
 
-  static String routeName = 'Home';
-  static String routePath = '/home';
+  static String routeName = 'Analysis';
+  static String routePath = '/analysis';
 
   @override
-  State<HomeWidget> createState() => _HomeWidgetState();
+  State<AnalysisWidget> createState() => _AnalysisWidgetState();
 }
 
-class _HomeWidgetState extends State<HomeWidget> {
-  late HomeModel _model;
+class _AnalysisWidgetState extends State<AnalysisWidget> {
+  late AnalysisModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => HomeModel());
+    _model = createModel(context, () => AnalysisModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -65,7 +65,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                     children: [
                       Text(
                         FFLocalizations.of(context).getText(
-                          'fh92enev' /* Hi, Welcome Back */,
+                          'wdwjju6y' /* Hi, Welcome Back */,
                         ),
                         style: FlutterFlowTheme.of(context)
                             .headlineSmall
@@ -92,7 +92,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                         alignment: AlignmentDirectional(-1.0, -1.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            '8npt8g00' /* Juan Pablo Corral */,
+                            'awz7gjvv' /* Juan Pablo Corral */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .bodyLarge
@@ -160,7 +160,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                           ),
                           Text(
                             FFLocalizations.of(context).getText(
-                              'xkkdwwl2' /* Total Balance */,
+                              '4peuomjm' /* Total Balance */,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -188,7 +188,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            'ezmfiyzv' /* $8.000.000 */,
+                            'p7102ans' /* $8.000.000 */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .titleLarge
@@ -241,7 +241,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                           ),
                           Text(
                             FFLocalizations.of(context).getText(
-                              'g83j4aux' /* Total Balance */,
+                              'c20752f4' /* Total Balance */,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -269,7 +269,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            '4tih60oq' /* -$8.000.000 */,
+                            '03uovtod' /* -$8.000.000 */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .titleLarge
@@ -332,7 +332,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                               40.0, 6.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              '4gpwxe67' /* $20.000.000 */,
+                              'x6vphc92' /* $20.000.000 */,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -355,7 +355,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 50.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            'u3jzfc0e' /* 30% */,
+                            'dmb216ra' /* 30% */,
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -398,7 +398,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                   ),
                   Text(
                     FFLocalizations.of(context).getText(
-                      'x2ctz0be' /* 30% Of Your Expenses, Looks Go... */,
+                      'afsazcg3' /* 30% Of Your Expenses, Looks Go... */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           font: GoogleFonts.inter(
