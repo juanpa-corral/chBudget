@@ -2,12 +2,10 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:percent_indicator/percent_indicator.dart';
 import 'profile_model.dart';
 export 'profile_model.dart';
 
@@ -54,73 +52,54 @@ class _ProfileWidgetState extends State<ProfileWidget> {
             FlutterFlowTheme.of(context).backgroundDarkModeAndLetters,
         body: Column(
           mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(30.0, 50.0, 30.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(30.0, 50.0, 30.0, 40.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Column(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        FFLocalizations.of(context).getText(
-                          'x28194pw' /* Hi, Welcome Back */,
-                        ),
-                        style: FlutterFlowTheme.of(context)
-                            .headlineSmall
-                            .override(
-                              font: GoogleFonts.interTight(
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .headlineSmall
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .headlineSmall
-                                    .fontStyle,
-                              ),
-                              color: FlutterFlowTheme.of(context).lightGreen,
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .fontStyle,
-                            ),
+                  FlutterFlowIconButton(
+                    borderRadius: 8.0,
+                    buttonSize: 40.0,
+                    icon: Icon(
+                      Icons.arrow_back,
+                      color: FlutterFlowTheme.of(context).lightGreen,
+                      size: 24.0,
+                    ),
+                    onPressed: () {
+                      print('IconButton pressed ...');
+                    },
+                  ),
+                  Align(
+                    alignment: AlignmentDirectional(0.0, 0.0),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        'maamc0i7' /* Profile */,
                       ),
-                      Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            't5plsjp0' /* Juan Pablo Corral */,
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .bodyLarge
-                              .override(
-                                font: GoogleFonts.inter(
+                      style:
+                          FlutterFlowTheme.of(context).headlineSmall.override(
+                                font: GoogleFonts.interTight(
                                   fontWeight: FlutterFlowTheme.of(context)
-                                      .bodyLarge
+                                      .headlineSmall
                                       .fontWeight,
                                   fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyLarge
+                                      .headlineSmall
                                       .fontStyle,
                                 ),
-                                color: FlutterFlowTheme.of(context).lightGreen,
-                                fontSize: 20.0,
+                                color: FlutterFlowTheme.of(context)
+                                    .backgroundGreenWhiteAndLetters,
                                 letterSpacing: 0.0,
                                 fontWeight: FlutterFlowTheme.of(context)
-                                    .bodyLarge
+                                    .headlineSmall
                                     .fontWeight,
                                 fontStyle: FlutterFlowTheme.of(context)
-                                    .bodyLarge
+                                    .headlineSmall
                                     .fontStyle,
                               ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                   FlutterFlowIconButton(
                     borderRadius: 100.0,
@@ -138,325 +117,525 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                 ],
               ),
             ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(30.0, 40.0, 30.0, 0.0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 10.0, 0.0),
-                            child: Icon(
-                              Icons.north_east_outlined,
-                              color: FlutterFlowTheme.of(context).lightGreen,
-                              size: 18.0,
-                            ),
-                          ),
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              'inh4z2uo' /* Total Balance */,
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w300,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                                  color:
-                                      FlutterFlowTheme.of(context).lightGreen,
-                                  fontSize: 16.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w300,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
-                          ),
-                        ],
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            '41w4xt3t' /* $8.000.000 */,
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .titleLarge
-                              .override(
-                                font: GoogleFonts.interTight(
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .fontStyle,
-                                ),
-                                color: FlutterFlowTheme.of(context).lightGreen,
-                                fontSize: 24.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .titleLarge
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .titleLarge
-                                    .fontStyle,
-                              ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 50.0,
-                    child: VerticalDivider(
-                      thickness: 2.0,
-                      color: FlutterFlowTheme.of(context).alternate,
-                    ),
-                  ),
-                  Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 10.0, 0.0),
-                            child: Icon(
-                              Icons.south_east_outlined,
-                              color: FlutterFlowTheme.of(context).lightGreen,
-                              size: 18.0,
-                            ),
-                          ),
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              't3o78l7n' /* Total Balance */,
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w300,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                                  color:
-                                      FlutterFlowTheme.of(context).lightGreen,
-                                  fontSize: 16.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w300,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
-                          ),
-                        ],
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            'd7yhl8fn' /* -$8.000.000 */,
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .titleLarge
-                              .override(
-                                font: GoogleFonts.interTight(
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .fontStyle,
-                                ),
-                                color: FlutterFlowTheme.of(context).blueButton,
-                                fontSize: 24.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .titleLarge
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .titleLarge
-                                    .fontStyle,
-                              ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+            Container(
+              height: MediaQuery.sizeOf(context).height * 0.82,
               child: Stack(
                 children: [
                   Align(
                     alignment: AlignmentDirectional(0.0, 0.0),
-                    child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 0.0),
-                      child: LinearPercentIndicator(
-                        percent: 0.7,
-                        lineHeight: 32.0,
-                        animation: true,
-                        animateFromLastPercent: true,
-                        progressColor: Color(0xFFF1FFF3),
-                        backgroundColor:
-                            FlutterFlowTheme.of(context).darkModeGreenBar,
-                        barRadius: Radius.circular(20.0),
-                        padding: EdgeInsets.zero,
-                      ),
-                    ),
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              40.0, 6.0, 0.0, 0.0),
-                          child: Text(
-                            FFLocalizations.of(context).getText(
-                              'ovqy36j2' /* $20.000.000 */,
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w600,
-                                    fontStyle: FontStyle.italic,
-                                  ),
-                                  color: Color(0xFF052224),
-                                  fontSize: 15.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w600,
-                                  fontStyle: FontStyle.italic,
-                                ),
-                          ),
+                    child: Container(
+                      width: double.infinity,
+                      height: MediaQuery.sizeOf(context).height * 0.71,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).lettersAndIcons,
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(0.0),
+                          bottomRight: Radius.circular(0.0),
+                          topLeft: Radius.circular(50.0),
+                          topRight: Radius.circular(50.0),
                         ),
                       ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 50.0, 0.0),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            'iimmlqeh' /* 30% */,
-                          ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FontWeight.normal,
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            0.0, 60.0, 0.0, 40.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            AuthUserStreamWidget(
+                              builder: (context) => Text(
+                                valueOrDefault<String>(
+                                  currentUserDisplayName,
+                                  'User',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .titleLarge
+                                    .override(
+                                      font: GoogleFonts.interTight(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontStyle,
+                                      ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .backgroundGreenWhiteAndLetters,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontWeight,
                                       fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
+                                          .titleLarge
                                           .fontStyle,
                                     ),
-                                    color: Color(0xFFF1FFF3),
-                                    fontSize: 15.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.normal,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  30.0, 0.0, 30.0, 0.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  if (currentUserDocument?.familyId != null) {
+                                    context
+                                        .pushNamed(AdminFamilyWidget.routeName);
+                                  } else {
+                                    context.pushNamed(
+                                      FamilyCreationWidget.routeName,
+                                      queryParameters: {
+                                        'emailUser': serializeParam(
+                                          currentUserEmail,
+                                          ParamType.String,
+                                        ),
+                                      }.withoutNulls,
+                                    );
+                                  }
+                                },
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    FlutterFlowIconButton(
+                                      borderRadius: 15.0,
+                                      buttonSize: 55.0,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondary,
+                                      icon: Icon(
+                                        Icons.family_restroom_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .backgroundGreenWhiteAndLetters,
+                                        size: 30.0,
+                                      ),
+                                      onPressed: () async {
+                                        if (currentUserDocument?.familyId !=
+                                            null) {
+                                          context.pushNamed(
+                                              AdminFamilyWidget.routeName);
+                                        } else {
+                                          context.pushNamed(
+                                            FamilyCreationWidget.routeName,
+                                            queryParameters: {
+                                              'emailUser': serializeParam(
+                                                currentUserEmail,
+                                                ParamType.String,
+                                              ),
+                                            }.withoutNulls,
+                                          );
+                                        }
+                                      },
+                                    ),
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        'y0z96bt7' /* Adminstrate Family */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            font: GoogleFonts.interTight(
+                                              fontWeight: FontWeight.w500,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .backgroundGreenWhiteAndLetters,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ].divide(SizedBox(width: 20.0)),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  30.0, 0.0, 30.0, 0.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(
+                                    JoinFamilyWidget.routeName,
+                                    queryParameters: {
+                                      'emailUser': serializeParam(
+                                        currentUserEmail,
+                                        ParamType.String,
+                                      ),
+                                    }.withoutNulls,
+                                  );
+                                },
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    FlutterFlowIconButton(
+                                      borderRadius: 15.0,
+                                      buttonSize: 55.0,
+                                      fillColor:
+                                          FlutterFlowTheme.of(context).warning,
+                                      icon: Icon(
+                                        Icons.join_inner_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .backgroundGreenWhiteAndLetters,
+                                        size: 30.0,
+                                      ),
+                                      onPressed: () async {
+                                        context.pushNamed(
+                                          JoinFamilyWidget.routeName,
+                                          queryParameters: {
+                                            'emailUser': serializeParam(
+                                              currentUserEmail,
+                                              ParamType.String,
+                                            ),
+                                          }.withoutNulls,
+                                        );
+                                      },
+                                    ),
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        '9ywyjqmx' /* Join To a Family */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            font: GoogleFonts.interTight(
+                                              fontWeight: FontWeight.w500,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .backgroundGreenWhiteAndLetters,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ].divide(SizedBox(width: 20.0)),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  30.0, 0.0, 30.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  FlutterFlowIconButton(
+                                    borderRadius: 15.0,
+                                    buttonSize: 55.0,
+                                    fillColor: FlutterFlowTheme.of(context)
+                                        .lightBlueButton,
+                                    icon: Icon(
+                                      Icons.person_outline,
+                                      color: FlutterFlowTheme.of(context)
+                                          .backgroundGreenWhiteAndLetters,
+                                      size: 30.0,
+                                    ),
+                                    onPressed: () {
+                                      print('IconButton pressed ...');
+                                    },
                                   ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
-                    child: Icon(
-                      Icons.check_box_outlined,
-                      color: FlutterFlowTheme.of(context)
-                          .backgroundGreenWhiteAndLetters,
-                      size: 24.0,
-                    ),
-                  ),
-                  Text(
-                    FFLocalizations.of(context).getText(
-                      '4ptilsjx' /* 30% Of Your Expenses, Looks Go... */,
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          font: GoogleFonts.inter(
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
-                          color: FlutterFlowTheme.of(context)
-                              .backgroundGreenWhiteAndLetters,
-                          letterSpacing: 0.0,
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                        ),
-                  ),
-                ],
-              ),
-            ),
-            FFButtonWidget(
-              onPressed: () async {
-                GoRouter.of(context).prepareAuthEvent();
-                await authManager.signOut();
-                GoRouter.of(context).clearRedirectLocation();
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '7mxbv75t' /* Edit Profle */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          font: GoogleFonts.interTight(
+                                            fontWeight: FontWeight.w500,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .backgroundGreenWhiteAndLetters,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                ].divide(SizedBox(width: 20.0)),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  30.0, 0.0, 30.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  FlutterFlowIconButton(
+                                    borderRadius: 15.0,
+                                    buttonSize: 55.0,
+                                    fillColor: Color(0xFF3299FF),
+                                    icon: Icon(
+                                      Icons.security_sharp,
+                                      color: FlutterFlowTheme.of(context)
+                                          .backgroundGreenWhiteAndLetters,
+                                      size: 30.0,
+                                    ),
+                                    onPressed: () {
+                                      print('IconButton pressed ...');
+                                    },
+                                  ),
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'ds5i55zs' /* Security */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          font: GoogleFonts.interTight(
+                                            fontWeight: FontWeight.w500,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .backgroundGreenWhiteAndLetters,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                ].divide(SizedBox(width: 20.0)),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  30.0, 0.0, 30.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  FlutterFlowIconButton(
+                                    borderRadius: 15.0,
+                                    buttonSize: 55.0,
+                                    fillColor: Color(0xFF0068FF),
+                                    icon: Icon(
+                                      Icons.settings_outlined,
+                                      color: FlutterFlowTheme.of(context)
+                                          .backgroundGreenWhiteAndLetters,
+                                      size: 30.0,
+                                    ),
+                                    onPressed: () {
+                                      print('IconButton pressed ...');
+                                    },
+                                  ),
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '58khgvuo' /* Setting */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          font: GoogleFonts.interTight(
+                                            fontWeight: FontWeight.w500,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .backgroundGreenWhiteAndLetters,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                ].divide(SizedBox(width: 20.0)),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  30.0, 0.0, 30.0, 0.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  var confirmDialogResponse = await showDialog<
+                                          bool>(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            title: Text('LogOut'),
+                                            content:
+                                                Text('Are you sure to Logout?'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, false),
+                                                child: Text('Cancel'),
+                                              ),
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, true),
+                                                child: Text('Confirm'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      ) ??
+                                      false;
+                                  if (confirmDialogResponse) {
+                                    GoRouter.of(context).prepareAuthEvent();
+                                    await authManager.signOut();
+                                    GoRouter.of(context)
+                                        .clearRedirectLocation();
 
-                context.goNamedAuth(LaunchAWidget.routeName, context.mounted);
-              },
-              text: FFLocalizations.of(context).getText(
-                '3q8kwztc' /* Log Out */,
-              ),
-              options: FFButtonOptions(
-                height: 40.0,
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                color: FlutterFlowTheme.of(context).primary,
-                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      font: GoogleFonts.interTight(
-                        fontWeight:
-                            FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                    context.pushNamedAuth(
+                                        LoginWidget.routeName, context.mounted);
+                                  } else {
+                                    context.pushNamedAuth(
+                                        ProfileWidget.routeName,
+                                        context.mounted);
+                                  }
+                                },
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    FlutterFlowIconButton(
+                                      borderRadius: 15.0,
+                                      buttonSize: 55.0,
+                                      fillColor:
+                                          FlutterFlowTheme.of(context).error,
+                                      icon: FaIcon(
+                                        FontAwesomeIcons.signOutAlt,
+                                        color: FlutterFlowTheme.of(context)
+                                            .backgroundGreenWhiteAndLetters,
+                                        size: 30.0,
+                                      ),
+                                      onPressed: () async {
+                                        var confirmDialogResponse =
+                                            await showDialog<bool>(
+                                                  context: context,
+                                                  builder:
+                                                      (alertDialogContext) {
+                                                    return AlertDialog(
+                                                      title: Text('LogOut'),
+                                                      content: Text(
+                                                          'Are you sure to Logout?'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext,
+                                                                  false),
+                                                          child: Text('Cancel'),
+                                                        ),
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext,
+                                                                  true),
+                                                          child:
+                                                              Text('Confirm'),
+                                                        ),
+                                                      ],
+                                                    );
+                                                  },
+                                                ) ??
+                                                false;
+                                        if (confirmDialogResponse) {
+                                          GoRouter.of(context)
+                                              .prepareAuthEvent();
+                                          await authManager.signOut();
+                                          GoRouter.of(context)
+                                              .clearRedirectLocation();
+
+                                          context.pushNamedAuth(
+                                              LoginWidget.routeName,
+                                              context.mounted);
+                                        } else {
+                                          context.pushNamedAuth(
+                                              ProfileWidget.routeName,
+                                              context.mounted);
+                                        }
+                                      },
+                                    ),
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        'luiatrp1' /*  Logout */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            font: GoogleFonts.interTight(
+                                              fontWeight: FontWeight.w500,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .backgroundGreenWhiteAndLetters,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ].divide(SizedBox(width: 20.0)),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                      color: Colors.white,
-                      letterSpacing: 0.0,
-                      fontWeight:
-                          FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                      fontStyle:
-                          FlutterFlowTheme.of(context).titleSmall.fontStyle,
                     ),
-                elevation: 0.0,
-                borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  Align(
+                    alignment: AlignmentDirectional(0.0, -1.0),
+                    child: AuthUserStreamWidget(
+                      builder: (context) => Container(
+                        width: MediaQuery.sizeOf(context).width * 0.3,
+                        height: MediaQuery.sizeOf(context).width * 0.3,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        child: Image.network(
+                          currentUserPhoto,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

@@ -191,7 +191,34 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 : NavBarPage(
                     initialPage: 'Profile',
                     page: ProfileWidget(),
-                  ))
+                  )),
+        FFRoute(
+          name: FamilyCreationWidget.routeName,
+          path: FamilyCreationWidget.routePath,
+          builder: (context, params) => FamilyCreationWidget(
+            emailUser: params.getParam(
+              'emailUser',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+            name: AdminFamilyWidget.routeName,
+            path: AdminFamilyWidget.routePath,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: AdminFamilyWidget(),
+                )),
+        FFRoute(
+          name: JoinFamilyWidget.routeName,
+          path: JoinFamilyWidget.routePath,
+          builder: (context, params) => JoinFamilyWidget(
+            emailUser: params.getParam(
+              'emailUser',
+              ParamType.String,
+            ),
+          ),
+        )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
 

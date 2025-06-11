@@ -792,52 +792,129 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Profile
   {
-    'x28194pw': {
-      'en': 'Hi, Welcome Back',
+    'maamc0i7': {
+      'en': 'Profile',
       'es': '',
     },
-    't5plsjp0': {
-      'en': 'Juan Pablo Corral',
+    'y0z96bt7': {
+      'en': 'Adminstrate Family',
       'es': '',
     },
-    'inh4z2uo': {
-      'en': 'Total Balance',
+    '9ywyjqmx': {
+      'en': 'Join To a Family',
       'es': '',
     },
-    '41w4xt3t': {
-      'en': '\$8.000.000',
+    '7mxbv75t': {
+      'en': 'Edit Profle',
       'es': '',
     },
-    't3o78l7n': {
-      'en': 'Total Balance',
+    'ds5i55zs': {
+      'en': 'Security',
       'es': '',
     },
-    'd7yhl8fn': {
-      'en': '-\$8.000.000',
+    '58khgvuo': {
+      'en': 'Setting',
       'es': '',
     },
-    '9mbhn4xc': {
-      'en': '',
-      'es': '',
-    },
-    'ovqy36j2': {
-      'en': '\$20.000.000',
-      'es': '',
-    },
-    'iimmlqeh': {
-      'en': '30%',
-      'es': '',
-    },
-    '4ptilsjx': {
-      'en': '30% Of Your Expenses, Looks Good',
-      'es': '',
-    },
-    '3q8kwztc': {
-      'en': 'Log Out',
+    'luiatrp1': {
+      'en': ' Logout',
       'es': '',
     },
     'lpjdikm8': {
       'en': 'Profile',
+      'es': '',
+    },
+  },
+  // FamilyCreation
+  {
+    '5io5s384': {
+      'en': 'Create Family',
+      'es': '',
+    },
+    'gwob4cxz': {
+      'en': 'Create a family to manage shared expenses',
+      'es': '',
+    },
+    '3zqiogds': {
+      'en': 'Family Name',
+      'es': '',
+    },
+    '9agct10g': {
+      'en': '',
+      'es': '',
+    },
+    '274u58wj': {
+      'en': 'Sarmiento Gonzales',
+      'es': '',
+    },
+    'mirbsw0q': {
+      'en': 'Create Family',
+      'es': '',
+    },
+    'a8083r4u': {
+      'en': 'Home',
+      'es': '',
+    },
+  },
+  // AdminFamily
+  {
+    '2z3dgfhl': {
+      'en': 'Family',
+      'es': '',
+    },
+    'vmaz7u96': {
+      'en': 'Random Name',
+      'es': '',
+    },
+    'hyrpuy7c': {
+      'en': 'user@randomname.com',
+      'es': '',
+    },
+    'gt9gv2nc': {
+      'en': 'Random Name',
+      'es': '',
+    },
+    'qy0aybrl': {
+      'en': 'user@randomname.com',
+      'es': '',
+    },
+    'ogqhwoyw': {
+      'en': 'Random Name',
+      'es': '',
+    },
+    'd9an3o68': {
+      'en': 'user@randomname.com',
+      'es': '',
+    },
+    'kykl1kxd': {
+      'en': 'Random Name',
+      'es': '',
+    },
+    'spwvgs66': {
+      'en': 'user@randomname.com',
+      'es': '',
+    },
+    '0vae4u48': {
+      'en': 'Profile',
+      'es': '',
+    },
+  },
+  // JoinFamily
+  {
+    'de9mh84y': {
+      'en': 'Join To a Family',
+      'es': '',
+    },
+    'g8mhzxzp': {
+      'en': 'Enter the Invitation Code',
+      'es': '',
+    },
+    'jt6vx8k1': {
+      'en': 'Join Family',
+      'es': '',
+    },
+    'ellu289k': {
+      'en': 'Home',
       'es': '',
     },
   },

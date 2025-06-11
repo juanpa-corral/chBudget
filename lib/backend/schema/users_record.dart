@@ -55,6 +55,16 @@ class UsersRecord extends FirestoreRecord {
   DateTime? get codeExpiryTimestamp => _codeExpiryTimestamp;
   bool hasCodeExpiryTimestamp() => _codeExpiryTimestamp != null;
 
+  // "family_id" field.
+  DocumentReference? _familyId;
+  DocumentReference? get familyId => _familyId;
+  bool hasFamilyId() => _familyId != null;
+
+  // "role" field.
+  String? _role;
+  String get role => _role ?? '';
+  bool hasRole() => _role != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -64,6 +74,8 @@ class UsersRecord extends FirestoreRecord {
     _phoneNumber = snapshotData['phone_number'] as String?;
     _verificationCode = snapshotData['verification_code'] as String?;
     _codeExpiryTimestamp = snapshotData['code_expiry_timestamp'] as DateTime?;
+    _familyId = snapshotData['family_id'] as DocumentReference?;
+    _role = snapshotData['role'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -108,6 +120,8 @@ Map<String, dynamic> createUsersRecordData({
   String? phoneNumber,
   String? verificationCode,
   DateTime? codeExpiryTimestamp,
+  DocumentReference? familyId,
+  String? role,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -119,6 +133,8 @@ Map<String, dynamic> createUsersRecordData({
       'phone_number': phoneNumber,
       'verification_code': verificationCode,
       'code_expiry_timestamp': codeExpiryTimestamp,
+      'family_id': familyId,
+      'role': role,
     }.withoutNulls,
   );
 
@@ -137,7 +153,9 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.createdTime == e2?.createdTime &&
         e1?.phoneNumber == e2?.phoneNumber &&
         e1?.verificationCode == e2?.verificationCode &&
-        e1?.codeExpiryTimestamp == e2?.codeExpiryTimestamp;
+        e1?.codeExpiryTimestamp == e2?.codeExpiryTimestamp &&
+        e1?.familyId == e2?.familyId &&
+        e1?.role == e2?.role;
   }
 
   @override
@@ -149,7 +167,9 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.createdTime,
         e?.phoneNumber,
         e?.verificationCode,
-        e?.codeExpiryTimestamp
+        e?.codeExpiryTimestamp,
+        e?.familyId,
+        e?.role
       ]);
 
   @override
