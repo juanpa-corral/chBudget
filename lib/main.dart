@@ -175,8 +175,8 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'Home': HomeWidget(),
-      'Analysis': AnalysisWidget(),
       'Transaction': TransactionWidget(),
+      'Analysis': AnalysisWidget(),
       'Categories': CategoriesWidget(),
       'Profile': ProfileWidget(),
     };
@@ -224,7 +224,7 @@ class _NavBarPageState extends State<NavBarPage> {
                 ),
                 Text(
                   FFLocalizations.of(context).getText(
-                    '3lg3rb5f' /* Home */,
+                    'tiwp7vlv' /* Home */,
                   ),
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
@@ -243,7 +243,7 @@ class _NavBarPageState extends State<NavBarPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  Icons.stacked_bar_chart_rounded,
+                  Icons.compare_arrows,
                   color: currentIndex == 1
                       ? FlutterFlowTheme.of(context).mainGreen
                       : FlutterFlowTheme.of(context)
@@ -252,7 +252,7 @@ class _NavBarPageState extends State<NavBarPage> {
                 ),
                 Text(
                   FFLocalizations.of(context).getText(
-                    'v9g1t6g7' /* Analysis */,
+                    '9dxl1mkc' /* Transaction */,
                   ),
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
@@ -271,7 +271,7 @@ class _NavBarPageState extends State<NavBarPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  Icons.compare_arrows,
+                  Icons.stacked_bar_chart_rounded,
                   color: currentIndex == 2
                       ? FlutterFlowTheme.of(context).mainGreen
                       : FlutterFlowTheme.of(context)
@@ -280,7 +280,7 @@ class _NavBarPageState extends State<NavBarPage> {
                 ),
                 Text(
                   FFLocalizations.of(context).getText(
-                    '9dxl1mkc' /* Transaction */,
+                    'v9g1t6g7' /* Analysis */,
                   ),
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(

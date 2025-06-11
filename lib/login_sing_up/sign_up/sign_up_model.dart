@@ -15,7 +15,7 @@ class SignUpModel extends FlutterFlowModel<SignUpWidget> {
   // State field(s) for NumberField widget.
   FocusNode? numberFieldFocusNode;
   TextEditingController? numberFieldTextController;
-  final numberFieldMask = MaskTextInputFormatter(mask: '(###) ###-####');
+  late MaskTextInputFormatter numberFieldMask;
   String? Function(BuildContext, String?)? numberFieldTextControllerValidator;
   // State field(s) for EmailField widget.
   FocusNode? emailFieldFocusNode;

@@ -8,6 +8,7 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'sign_up_model.dart';
 export 'sign_up_model.dart';
 
@@ -37,6 +38,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
     _model.numberFieldTextController ??= TextEditingController();
     _model.numberFieldFocusNode ??= FocusNode();
 
+    _model.numberFieldMask = MaskTextInputFormatter(mask: '(###) ###-####');
     _model.emailFieldTextController ??= TextEditingController();
     _model.emailFieldFocusNode ??= FocusNode();
 

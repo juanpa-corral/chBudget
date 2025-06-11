@@ -11,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'forgot_password_model.dart';
 export 'forgot_password_model.dart';
 
@@ -406,19 +405,59 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                     FFAppState().codeResetPass.toString(),
                                 codeExpiryTimestamp: getCurrentTimestamp,
                               ));
-                              await launchUrl(Uri(
-                                  scheme: 'mailto',
-                                  path: _model
-                                      .emailResetPassFieldTextController.text,
-                                  query: {
-                                    'subject': 'Tu codigo de verificación',
-                                    'body':
-                                        'Hola, tu código para restablecer la contraseña es: ${FFAppState().codeResetPass.toString()}',
-                                  }
-                                      .entries
-                                      .map((MapEntry<String, String> e) =>
-                                          '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
-                                      .join('&')));
+
+                              await EmailRecord.collection
+                                  .doc()
+                                  .set(createEmailRecordData(
+                                    to: _model
+                                        .emailResetPassFieldTextController.text,
+                                    message: updateMessageStruct(
+                                      MessageStruct(
+                                        subject: 'Verification Code',
+                                        html:
+                                            '<!DOCTYPE html><html lang=\"es\"><head>  <meta charset=\"UTF-8\">  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">  <title>Tu Código de Verificación</title>  <style>    @import url(\'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap\');    body {      font-family: \'Inter\', Arial, sans-serif;    }  </style></head><body style=\"margin: 0; padding: 0; background-color: #f9fafb;\">  <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"background-color: #f9fafb;\">    <tr>      <td align=\"center\" style=\"padding: 40px 20px;\">        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"max-width: 520px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">          <tr>            <td align=\"center\" style=\"padding: 40px 30px;\">              <!-- Header -->              <h1 style=\"font-size: 24px; font-weight: 600; color: #111827; margin: 0 0 16px 0;\">Tu código de un solo uso</h1>              <p style=\"font-size: 16px; color: #6B7280; line-height: 1.6; margin: 0 0 32px 0;\">Para proteger tu cuenta, usa el siguiente código para verificar tu identidad en <strong>CHBudget</strong>.</p>              <!-- Verification Code -->              <p style=\"font-size: 48px; font-weight: 700; color: #111827; letter-spacing: 10px; margin: 0; line-height: 1; background-color: #f3f4f6; padding: 20px; border-radius: 8px;\">${FFAppState().codeResetPass.toString()}</p>              <!-- Expiration Info -->              <p style=\"font-size: 14px; color: #6B7280; line-height: 1.6; margin: 32px 0 0 0;\">Este código solo es válido por los próximos 10 minutos.</p>              <!-- Footer -->              <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"margin-top: 40px; padding-top: 20px; border-top: 1px solid #E5E7EB;\">                <tr>                  <td align=\"center\">                    <p style=\"font-size: 14px; color: #9CA3AF; margin: 0;\">Si no solicitaste esto, puedes ignorar este correo.</p>                    <p style=\"font-size: 14px; font-weight: 600; color: #3b82f6; margin: 8px 0 0 0;\">CHBudget</p>                  </td>                </tr>              </table>            </td>          </tr>        </table>      </td>    </tr>  </table></body></html>',
+                                        text:
+                                            'Este es tu codigo de verificacion: ${FFAppState().codeResetPass.toString()}',
+                                      ),
+                                      clearUnsetFields: false,
+                                      create: true,
+                                    ),
+                                  ));
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                    'Email sent!',
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .lightGreen,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                  duration: Duration(milliseconds: 4000),
+                                  backgroundColor:
+                                      FlutterFlowTheme.of(context).mainGreen,
+                                ),
+                              );
 
                               context.pushNamed(
                                 SecurityPinWidget.routeName,
@@ -496,7 +535,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                             context.pushNamed(SignUpWidget.routeName);
                           },
                           text: FFLocalizations.of(context).getText(
-                            'ci9xhesj' /* Sign Up */,
+                            'rj9macyl' /* Sign Up */,
                           ),
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.6,

@@ -248,7 +248,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Sign Up',
       'es': '',
     },
-    '0do99xra': {
+    'v20racys': {
       'en': 'Home',
       'es': '',
     },
@@ -339,7 +339,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Log In',
       'es': '',
     },
-    '6c0hsfzz': {
+    'qum5cs94': {
       'en': 'Home',
       'es': '',
     },
@@ -387,7 +387,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Next Step',
       'es': '',
     },
-    'ci9xhesj': {
+    'rj9macyl': {
       'en': 'Sign Up',
       'es': '',
     },
@@ -399,7 +399,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Sign Up',
       'es': '',
     },
-    'z1d9ysp0': {
+    'mixyxvgb': {
       'en': 'Home',
       'es': '',
     },
@@ -418,7 +418,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Change Password',
       'es': '',
     },
-    'gbmtuv5o': {
+    'wmj179r2': {
       'en': 'Home',
       'es': '',
     },
@@ -453,7 +453,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Sign Up',
       'es': '',
     },
-    '0v7rxh1g': {
+    'ynhm6m6j': {
       'en': 'Home',
       'es': '',
     },
@@ -465,7 +465,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Email Reset Password Has been sent Successfully! Try Log In Again!',
       'es': '',
     },
-    'gfxv1h1k': {
+    'nvvv5m7x': {
       'en': 'Home',
       'es': '',
     },
@@ -493,7 +493,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Or prefer to use pin code?',
       'es': '',
     },
-    'o6ohms1p': {
+    '1kstlspg': {
       'en': 'Home',
       'es': '',
     },
@@ -644,7 +644,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '\$6.000.000',
       'es': '',
     },
-    '3lg3rb5f': {
+    'tiwp7vlv': {
       'en': 'Home',
       'es': '',
     },
