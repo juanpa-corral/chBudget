@@ -256,80 +256,87 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 ),
                               ),
                             ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  30.0, 0.0, 30.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed(
-                                    JoinFamilyWidget.routeName,
-                                    queryParameters: {
-                                      'emailUser': serializeParam(
-                                        currentUserEmail,
-                                        ParamType.String,
-                                      ),
-                                    }.withoutNulls,
-                                  );
-                                },
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    FlutterFlowIconButton(
-                                      borderRadius: 15.0,
-                                      buttonSize: 55.0,
-                                      fillColor:
-                                          FlutterFlowTheme.of(context).warning,
-                                      icon: Icon(
-                                        Icons.join_inner_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .backgroundGreenWhiteAndLetters,
-                                        size: 30.0,
-                                      ),
-                                      onPressed: () async {
-                                        context.pushNamed(
-                                          JoinFamilyWidget.routeName,
-                                          queryParameters: {
-                                            'emailUser': serializeParam(
-                                              currentUserEmail,
-                                              ParamType.String,
-                                            ),
-                                          }.withoutNulls,
-                                        );
-                                      },
-                                    ),
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        '9ywyjqmx' /* Join To a Family */,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            font: GoogleFonts.interTight(
-                                              fontWeight: FontWeight.w500,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontStyle,
-                                            ),
+                            if (currentUserDocument?.familyId == null)
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    30.0, 0.0, 30.0, 0.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(
+                                        JoinFamilyWidget.routeName,
+                                        queryParameters: {
+                                          'emailUser': serializeParam(
+                                            currentUserEmail,
+                                            ParamType.String,
+                                          ),
+                                        }.withoutNulls,
+                                      );
+                                    },
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        FlutterFlowIconButton(
+                                          borderRadius: 15.0,
+                                          buttonSize: 55.0,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .warning,
+                                          icon: Icon(
+                                            Icons.join_inner_rounded,
                                             color: FlutterFlowTheme.of(context)
                                                 .backgroundGreenWhiteAndLetters,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontStyle,
+                                            size: 30.0,
                                           ),
+                                          onPressed: () async {
+                                            context.pushNamed(
+                                              JoinFamilyWidget.routeName,
+                                              queryParameters: {
+                                                'emailUser': serializeParam(
+                                                  currentUserEmail,
+                                                  ParamType.String,
+                                                ),
+                                              }.withoutNulls,
+                                            );
+                                          },
+                                        ),
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            '9ywyjqmx' /* Join To a Family */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleSmall
+                                              .override(
+                                                font: GoogleFonts.interTight(
+                                                  fontWeight: FontWeight.w500,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
+                                                color: FlutterFlowTheme.of(
+                                                        context)
+                                                    .backgroundGreenWhiteAndLetters,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ].divide(SizedBox(width: 20.0)),
                                     ),
-                                  ].divide(SizedBox(width: 20.0)),
+                                  ),
                                 ),
                               ),
-                            ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   30.0, 0.0, 30.0, 0.0),
@@ -629,7 +636,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           shape: BoxShape.circle,
                         ),
                         child: Image.network(
-                          currentUserPhoto,
+                          currentUserPhoto != ''
+                              ? currentUserPhoto
+                              : 'https://images.unsplash.com/photo-1557110437-0bcd0a636d62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyfHxkZWZhdWx0JTIwcHJvZmlsZXxlbnwwfHx8fDE3NDk4MzQyNjF8MA&ixlib=rb-4.1.0&q=80&w=1080',
                           fit: BoxFit.cover,
                         ),
                       ),

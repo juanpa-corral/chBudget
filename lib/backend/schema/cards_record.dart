@@ -40,12 +40,24 @@ class CardsRecord extends FirestoreRecord {
   DocumentReference? get familyId => _familyId;
   bool hasFamilyId() => _familyId != null;
 
+  // "network" field.
+  String? _network;
+  String get network => _network ?? '';
+  bool hasNetwork() => _network != null;
+
+  // "is_active" field.
+  bool? _isActive;
+  bool get isActive => _isActive ?? false;
+  bool hasIsActive() => _isActive != null;
+
   void _initializeFields() {
     _cardAlias = snapshotData['card_alias'] as String?;
     _las4Digits = snapshotData['las_4_digits'] as String?;
     _isPersonal = snapshotData['is_personal'] as bool?;
     _ownerId = snapshotData['owner_id'] as DocumentReference?;
     _familyId = snapshotData['family_id'] as DocumentReference?;
+    _network = snapshotData['network'] as String?;
+    _isActive = snapshotData['is_active'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -87,6 +99,8 @@ Map<String, dynamic> createCardsRecordData({
   bool? isPersonal,
   DocumentReference? ownerId,
   DocumentReference? familyId,
+  String? network,
+  bool? isActive,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -95,6 +109,8 @@ Map<String, dynamic> createCardsRecordData({
       'is_personal': isPersonal,
       'owner_id': ownerId,
       'family_id': familyId,
+      'network': network,
+      'is_active': isActive,
     }.withoutNulls,
   );
 
@@ -110,12 +126,21 @@ class CardsRecordDocumentEquality implements Equality<CardsRecord> {
         e1?.las4Digits == e2?.las4Digits &&
         e1?.isPersonal == e2?.isPersonal &&
         e1?.ownerId == e2?.ownerId &&
-        e1?.familyId == e2?.familyId;
+        e1?.familyId == e2?.familyId &&
+        e1?.network == e2?.network &&
+        e1?.isActive == e2?.isActive;
   }
 
   @override
-  int hash(CardsRecord? e) => const ListEquality().hash(
-      [e?.cardAlias, e?.las4Digits, e?.isPersonal, e?.ownerId, e?.familyId]);
+  int hash(CardsRecord? e) => const ListEquality().hash([
+        e?.cardAlias,
+        e?.las4Digits,
+        e?.isPersonal,
+        e?.ownerId,
+        e?.familyId,
+        e?.network,
+        e?.isActive
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is CardsRecord;

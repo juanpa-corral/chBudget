@@ -862,36 +862,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Family',
       'es': '',
     },
-    'vmaz7u96': {
-      'en': 'Random Name',
+    'ddbm2i06': {
+      'en': 'Family Cards',
       'es': '',
     },
-    'hyrpuy7c': {
-      'en': 'user@randomname.com',
-      'es': '',
-    },
-    'gt9gv2nc': {
-      'en': 'Random Name',
-      'es': '',
-    },
-    'qy0aybrl': {
-      'en': 'user@randomname.com',
-      'es': '',
-    },
-    'ogqhwoyw': {
-      'en': 'Random Name',
-      'es': '',
-    },
-    'd9an3o68': {
-      'en': 'user@randomname.com',
-      'es': '',
-    },
-    'kykl1kxd': {
-      'en': 'Random Name',
-      'es': '',
-    },
-    'spwvgs66': {
-      'en': 'user@randomname.com',
+    'lgr3dgnf': {
+      'en': 'Add Family Cards',
       'es': '',
     },
     '0vae4u48': {
@@ -915,6 +891,184 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ellu289k': {
       'en': 'Home',
+      'es': '',
+    },
+  },
+  // AddCardForm
+  {
+    'u8gau2tn': {
+      'en': 'Add New Family Card',
+      'es': '',
+    },
+    '4mjzgd3v': {
+      'en': 'Card Alias',
+      'es': '',
+    },
+    'wo2rqffs': {
+      'en': 'My Credit Card',
+      'es': '',
+    },
+    'fi1cbt3j': {
+      'en': 'Last 4 Digits',
+      'es': '',
+    },
+    'ypdrt8ni': {
+      'en': '1234',
+      'es': '',
+    },
+    'mg7lfwl8': {
+      'en': 'Network',
+      'es': '',
+    },
+    'zx2ojlf2': {
+      'en': 'Select...',
+      'es': '',
+    },
+    '2tzntwtf': {
+      'en': 'Search...',
+      'es': '',
+    },
+    'rs388sk9': {
+      'en': 'Visa',
+      'es': '',
+    },
+    'ywtveonn': {
+      'en': 'Mastercard',
+      'es': '',
+    },
+    'z3rbnc4p': {
+      'en': 'American Express',
+      'es': '',
+    },
+    'enfsn4op': {
+      'en': 'Dinners Club',
+      'es': '',
+    },
+    'ws8fob68': {
+      'en': 'Discover',
+      'es': '',
+    },
+    '4nbkf7hl': {
+      'en': 'Family Member',
+      'es': '',
+    },
+    's7p930sm': {
+      'en': 'Select...',
+      'es': '',
+    },
+    'ft81yzed': {
+      'en': 'Search...',
+      'es': '',
+    },
+    'kn7l7u9g': {
+      'en': 'Add Card',
+      'es': '',
+    },
+  },
+  // AddExpenseForm
+  {
+    '9j2f74cq': {
+      'en': 'Description Name',
+      'es': '',
+    },
+    'tscyb4th': {
+      'en': '',
+      'es': '',
+    },
+    'pns4ho43': {
+      'en': 'Launch on Archie\'s',
+      'es': '',
+    },
+    'w1h4rbqy': {
+      'en': 'Amount',
+      'es': '',
+    },
+    'bludj7b7': {
+      'en': '120000',
+      'es': '',
+    },
+    'pd8bzgw8': {
+      'en': 'Date',
+      'es': '',
+    },
+    'aj0qoj63': {
+      'en': 'Category',
+      'es': '',
+    },
+    '54ucjuhb': {
+      'en': 'Transport...',
+      'es': '',
+    },
+    'tz3hrt2n': {
+      'en': 'Search...',
+      'es': '',
+    },
+    'ujfkkpca': {
+      'en': 'Option 1',
+      'es': '',
+    },
+    'z7dg6vzn': {
+      'en': 'Option 2',
+      'es': '',
+    },
+    'ro8s9a5j': {
+      'en': 'Option 3',
+      'es': '',
+    },
+    '1cxcqak6': {
+      'en': 'Type of Transaction',
+      'es': '',
+    },
+    '7vpcpxbp': {
+      'en': 'Personal',
+      'es': '',
+    },
+    'jfqqig8x': {
+      'en': 'Familiar',
+      'es': '',
+    },
+    '82653ocb': {
+      'en': 'Card',
+      'es': '',
+    },
+    'tba82sd8': {
+      'en': '****-****-****-3456',
+      'es': '',
+    },
+    'xt3fxnlh': {
+      'en': 'Search...',
+      'es': '',
+    },
+    '0n100alu': {
+      'en': 'Option 1',
+      'es': '',
+    },
+    'gmbjgtkx': {
+      'en': 'Option 2',
+      'es': '',
+    },
+    'ur060v88': {
+      'en': 'Option 3',
+      'es': '',
+    },
+    'a9smy4y6': {
+      'en': 'Save Expense',
+      'es': '',
+    },
+    'cf5tkcx4': {
+      'en': 'example@example.com is required',
+      'es': '',
+    },
+    'iy95mshd': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    'xj4jxgoz': {
+      'en': '*  *  *  *  *  *  *  *  is required',
+      'es': '',
+    },
+    'po6we9ks': {
+      'en': 'Please choose an option from the dropdown',
       'es': '',
     },
   },
