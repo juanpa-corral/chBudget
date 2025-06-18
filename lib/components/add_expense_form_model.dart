@@ -1,10 +1,16 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'add_expense_form_widget.dart' show AddExpenseFormWidget;
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 
 class AddExpenseFormModel extends FlutterFlowModel<AddExpenseFormWidget> {
+  ///  Local state fields for this component.
+
+  String? selectedMainCategory;
+
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
@@ -21,6 +27,9 @@ class AddExpenseFormModel extends FlutterFlowModel<AddExpenseFormWidget> {
   // State field(s) for category widget.
   String? categoryValue;
   FormFieldController<String>? categoryValueController;
+  // State field(s) for sub_category widget.
+  String? subCategoryValue;
+  FormFieldController<String>? subCategoryValueController;
   // State field(s) for typeOfTransaction widget.
   FormFieldController<List<String>>? typeOfTransactionValueController;
   String? get typeOfTransactionValue =>
@@ -30,6 +39,8 @@ class AddExpenseFormModel extends FlutterFlowModel<AddExpenseFormWidget> {
   // State field(s) for card widget.
   String? cardValue;
   FormFieldController<String>? cardValueController;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  CardsRecord? cardSelected;
 
   @override
   void initState(BuildContext context) {

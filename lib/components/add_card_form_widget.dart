@@ -373,7 +373,7 @@ class _AddCardFormWidgetState extends State<AddCardFormWidget> {
                           'z3rbnc4p' /* American Express */,
                         ),
                         FFLocalizations.of(context).getText(
-                          'enfsn4op' /* Dinners Club */,
+                          'enfsn4op' /* Diners Club */,
                         ),
                         FFLocalizations.of(context).getText(
                           'ws8fob68' /* Discover */,

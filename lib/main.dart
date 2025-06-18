@@ -11,6 +11,7 @@ import 'backend/firebase/firebase_config.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'index.dart';
 
@@ -178,7 +179,7 @@ class _NavBarPageState extends State<NavBarPage> {
       'Transaction': TransactionWidget(),
       'Analysis': AnalysisWidget(),
       'Categories': CategoriesWidget(),
-      'Profile': ProfileWidget(),
+      'Accounts': AccountsWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -327,7 +328,7 @@ class _NavBarPageState extends State<NavBarPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  Icons.person_outlined,
+                  FontAwesomeIcons.wallet,
                   color: currentIndex == 4
                       ? FlutterFlowTheme.of(context).mainGreen
                       : FlutterFlowTheme.of(context)
@@ -336,7 +337,7 @@ class _NavBarPageState extends State<NavBarPage> {
                 ),
                 Text(
                   FFLocalizations.of(context).getText(
-                    'lpjdikm8' /* Profile */,
+                    'qpjl3oe0' /* Accounts */,
                   ),
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(

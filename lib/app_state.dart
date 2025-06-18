@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'flutter_flow/flutter_flow_util.dart';
+import 'dart:convert';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -26,32 +28,16 @@ class FFAppState extends ChangeNotifier {
     _codeResetPass = value;
   }
 
-  List<String> _categoriesList = [''];
-  List<String> get categoriesList => _categoriesList;
-  set categoriesList(List<String> value) {
-    _categoriesList = value;
+  dynamic _categoryMap = jsonDecode(
+      '{\"Hogar\":[\"Servicios Públicos\",\"Mercado\",\"Arriendo / Hipoteca\",\"Mantenimiento y Reparaciones\"],\"Transporte\":[\"Combustible\",\"Mantenimiento Vehículo\",\"Parqueaderos\",\"Transporte Público y Apps\",\"Seguros e Impuestos\"],\"Vida y Ocio\":[\"Comida Fuera de Casa\",\"Suscripciones\",\"Compras y Vestuario\",\"Ocio y Recreación\",\"Cuidado Personal\"],\"Viajes\":[\"Vuelos y Tiquetes\",\"Alojamiento\",\"Transporte en Viaje\"],\"Salud y Bienestar\":[\"Salud\",\"Educación\",\"Mascotas\"],\"Finanzas y Obligaciones\":[\"Regalos y Donaciones\",\"Impuestos\",\"Otros Gastos\"],\"Negocios / Empresa\":[\"Gastos de Empresa\"]}');
+  dynamic get categoryMap => _categoryMap;
+  set categoryMap(dynamic value) {
+    _categoryMap = value;
   }
 
-  void addToCategoriesList(String value) {
-    categoriesList.add(value);
-  }
-
-  void removeFromCategoriesList(String value) {
-    categoriesList.remove(value);
-  }
-
-  void removeAtIndexFromCategoriesList(int index) {
-    categoriesList.removeAt(index);
-  }
-
-  void updateCategoriesListAtIndex(
-    int index,
-    String Function(String) updateFn,
-  ) {
-    categoriesList[index] = updateFn(_categoriesList[index]);
-  }
-
-  void insertAtIndexInCategoriesList(int index, String value) {
-    categoriesList.insert(index, value);
+  bool _isOptionExpanded = false;
+  bool get isOptionExpanded => _isOptionExpanded;
+  set isOptionExpanded(bool value) {
+    _isOptionExpanded = value;
   }
 }

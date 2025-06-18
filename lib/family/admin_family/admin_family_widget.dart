@@ -877,7 +877,7 @@ class _AdminFamilyWidgetState extends State<AdminFamilyWidget> {
                                                                       );
                                                                     } else if (listViewCardsRecord
                                                                             .network ==
-                                                                        'Dinners Club') {
+                                                                        'Diners Club') {
                                                                       return FaIcon(
                                                                         FontAwesomeIcons
                                                                             .ccDinersClub,

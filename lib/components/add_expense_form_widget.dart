@@ -1,3 +1,5 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -5,8 +7,11 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'add_expense_form_model.dart';
 export 'add_expense_form_model.dart';
 
@@ -49,6 +54,8 @@ class _AddExpenseFormWidgetState extends State<AddExpenseFormWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Align(
       alignment: AlignmentDirectional(1.0, 308.0),
       child: Container(
@@ -64,7 +71,7 @@ class _AddExpenseFormWidgetState extends State<AddExpenseFormWidget> {
           ),
         ),
         child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+          padding: EdgeInsetsDirectional.fromSTEB(20.0, 40.0, 20.0, 0.0),
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
@@ -74,7 +81,7 @@ class _AddExpenseFormWidgetState extends State<AddExpenseFormWidget> {
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 40.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
                     child: Form(
                       key: _model.formKey,
                       autovalidateMode: AutovalidateMode.always,
@@ -162,7 +169,7 @@ class _AddExpenseFormWidgetState extends State<AddExpenseFormWidget> {
                                           ),
                                       hintText:
                                           FFLocalizations.of(context).getText(
-                                        'pns4ho43' /* Launch on Archie's */,
+                                        'pns4ho43' /* Lunch on Archie's */,
                                       ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -594,7 +601,7 @@ class _AddExpenseFormWidgetState extends State<AddExpenseFormWidget> {
                                         10.0, 0.0, 0.0, 10.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'aj0qoj63' /* Category */,
+                                        'wdacva3d' /* Main Category */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -631,19 +638,15 @@ class _AddExpenseFormWidgetState extends State<AddExpenseFormWidget> {
                                     controller:
                                         _model.categoryValueController ??=
                                             FormFieldController<String>(null),
-                                    options: [
-                                      FFLocalizations.of(context).getText(
-                                        'ujfkkpca' /* Option 1 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'z7dg6vzn' /* Option 2 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'ro8s9a5j' /* Option 3 */,
-                                      )
-                                    ],
-                                    onChanged: (val) => safeSetState(
-                                        () => _model.categoryValue = val),
+                                    options: functions
+                                        .getJsonKeys(FFAppState().categoryMap)!,
+                                    onChanged: (val) async {
+                                      safeSetState(
+                                          () => _model.categoryValue = val);
+                                      _model.selectedMainCategory =
+                                          _model.categoryValue;
+                                      safeSetState(() {});
+                                    },
                                     width: double.infinity,
                                     height: 40.0,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -673,7 +676,7 @@ class _AddExpenseFormWidgetState extends State<AddExpenseFormWidget> {
                                         ),
                                     hintText:
                                         FFLocalizations.of(context).getText(
-                                      '54ucjuhb' /* Transport... */,
+                                      'ds5obj1n' /* Home... */,
                                     ),
                                     icon: Icon(
                                       Icons.keyboard_arrow_down_rounded,
@@ -695,6 +698,111 @@ class _AddExpenseFormWidgetState extends State<AddExpenseFormWidget> {
                                     isMultiSelect: false,
                                   ),
                                 ),
+                                if (_model.selectedMainCategory != null &&
+                                    _model.selectedMainCategory != '')
+                                  Align(
+                                    alignment: AlignmentDirectional(-1.0, -1.0),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 0.0, 10.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'aj0qoj63' /* Sub Category */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.inter(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .lightGreen,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  ),
+                                if (_model.selectedMainCategory != null &&
+                                    _model.selectedMainCategory != '')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 10.0),
+                                    child: FlutterFlowDropDown<String>(
+                                      controller:
+                                          _model.subCategoryValueController ??=
+                                              FormFieldController<String>(null),
+                                      options: functions.getSubcategories(
+                                          FFAppState().categoryMap,
+                                          _model.selectedMainCategory!)!,
+                                      onChanged: (val) => safeSetState(
+                                          () => _model.subCategoryValue = val),
+                                      width: double.infinity,
+                                      height: 40.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .lettersAndIcons,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        '54ucjuhb' /* Transport... */,
+                                      ),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .blueButton,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .lightGreen,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 0.0,
+                                      borderRadius: 20.0,
+                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: false,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
+                                  ),
                               ],
                             ),
                           ),
@@ -841,11 +949,17 @@ class _AddExpenseFormWidgetState extends State<AddExpenseFormWidget> {
                                     chipSpacing: 8.0,
                                     rowSpacing: 8.0,
                                     multiselect: false,
+                                    initialized:
+                                        _model.typeOfTransactionValue != null,
                                     alignment: WrapAlignment.center,
                                     controller: _model
                                             .typeOfTransactionValueController ??=
                                         FormFieldController<List<String>>(
-                                      [],
+                                      [
+                                        FFLocalizations.of(context).getText(
+                                          'gq80qrn9' /* Personal */,
+                                        )
+                                      ],
                                     ),
                                     wrapped: false,
                                   ),
@@ -899,71 +1013,107 @@ class _AddExpenseFormWidgetState extends State<AddExpenseFormWidget> {
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
-                                  child: FlutterFlowDropDown<String>(
-                                    controller: _model.cardValueController ??=
-                                        FormFieldController<String>(null),
-                                    options: [
-                                      FFLocalizations.of(context).getText(
-                                        '0n100alu' /* Option 1 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'gmbjgtkx' /* Option 2 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'ur060v88' /* Option 3 */,
-                                      )
-                                    ],
-                                    onChanged: (val) => safeSetState(
-                                        () => _model.cardValue = val),
-                                    width: double.infinity,
-                                    height: 40.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
+                                  child: StreamBuilder<List<CardsRecord>>(
+                                    stream: queryCardsRecord(
+                                      queryBuilder: (cardsRecord) => cardsRecord
+                                          .where(
+                                            'owner_id',
+                                            isEqualTo: currentUserReference,
+                                          )
+                                          .where(
+                                            'is_active',
+                                            isEqualTo: true,
+                                          )
+                                          .where(
+                                            'is_personal',
+                                            isEqualTo:
+                                                _model.typeOfTransactionValue ==
+                                                        'Personal'
+                                                    ? true
+                                                    : false,
                                           ),
-                                          color: FlutterFlowTheme.of(context)
-                                              .lettersAndIcons,
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
+                                    ),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                      List<CardsRecord> cardCardsRecordList =
+                                          snapshot.data!;
+
+                                      return FlutterFlowDropDown<String>(
+                                        controller: _model
+                                                .cardValueController ??=
+                                            FormFieldController<String>(null),
+                                        options: cardCardsRecordList
+                                            .map((e) => e.cardAlias)
+                                            .toList(),
+                                        onChanged: (val) => safeSetState(
+                                            () => _model.cardValue = val),
+                                        width: double.infinity,
+                                        height: 40.0,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.inter(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .lettersAndIcons,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'tba82sd8' /* ****-****-****-3456 */,
                                         ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      'tba82sd8' /* ****-****-****-3456 */,
-                                    ),
-                                    icon: Icon(
-                                      Icons.keyboard_arrow_down_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .blueButton,
-                                      size: 24.0,
-                                    ),
-                                    fillColor:
-                                        FlutterFlowTheme.of(context).lightGreen,
-                                    elevation: 2.0,
-                                    borderColor: Colors.transparent,
-                                    borderWidth: 0.0,
-                                    borderRadius: 20.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 0.0, 12.0, 0.0),
-                                    hidesUnderline: true,
-                                    isOverButton: false,
-                                    isSearchable: false,
-                                    isMultiSelect: false,
+                                        icon: Icon(
+                                          Icons.keyboard_arrow_down_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .blueButton,
+                                          size: 24.0,
+                                        ),
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .lightGreen,
+                                        elevation: 2.0,
+                                        borderColor: Colors.transparent,
+                                        borderWidth: 0.0,
+                                        borderRadius: 20.0,
+                                        margin: EdgeInsetsDirectional.fromSTEB(
+                                            12.0, 0.0, 12.0, 0.0),
+                                        hidesUnderline: true,
+                                        isOverButton: false,
+                                        isSearchable: false,
+                                        isMultiSelect: false,
+                                      );
+                                    },
                                   ),
                                 ),
                               ],
@@ -973,8 +1123,60 @@ class _AddExpenseFormWidgetState extends State<AddExpenseFormWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                _model.cardSelected =
+                                    await queryCardsRecordOnce(
+                                  queryBuilder: (cardsRecord) => cardsRecord
+                                      .where(
+                                        'owner_id',
+                                        isEqualTo: currentUserReference,
+                                      )
+                                      .where(
+                                        'card_alias',
+                                        isEqualTo: _model.cardValue,
+                                      ),
+                                  singleRecord: true,
+                                ).then((s) => s.firstOrNull);
+
+                                await TransactionsRecord.collection
+                                    .doc()
+                                    .set(createTransactionsRecordData(
+                                      amount: double.tryParse(
+                                          _model.amountTextController.text),
+                                      description:
+                                          _model.descriptionTextController.text,
+                                      date: _model.dateSelectedDay?.start,
+                                      category: _model.categoryValue,
+                                      cardRef: _model.cardSelected?.reference,
+                                      recordedBy: currentUserReference,
+                                      isPersonal:
+                                          _model.typeOfTransactionValue ==
+                                                  'Personal'
+                                              ? true
+                                              : false,
+                                      familyId: _model.typeOfTransactionValue ==
+                                              'Familiar'
+                                          ? currentUserDocument?.familyId
+                                          : null,
+                                      subCategory: _model.subCategoryValue,
+                                    ));
+                                Navigator.pop(context);
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'Added Expense!',
+                                      style: TextStyle(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                    ),
+                                    duration: Duration(milliseconds: 4000),
+                                    backgroundColor:
+                                        FlutterFlowTheme.of(context).mainGreen,
+                                  ),
+                                );
+
+                                safeSetState(() {});
                               },
                               text: FFLocalizations.of(context).getText(
                                 'a9smy4y6' /* Save Expense */,

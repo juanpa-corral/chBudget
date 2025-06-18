@@ -186,12 +186,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
             name: ProfileWidget.routeName,
             path: ProfileWidget.routePath,
-            builder: (context, params) => params.isEmpty
-                ? NavBarPage(initialPage: 'Profile')
-                : NavBarPage(
-                    initialPage: 'Profile',
-                    page: ProfileWidget(),
-                  )),
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: ProfileWidget(),
+                )),
         FFRoute(
           name: FamilyCreationWidget.routeName,
           path: FamilyCreationWidget.routePath,
@@ -218,7 +216,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.String,
             ),
           ),
-        )
+        ),
+        FFRoute(
+            name: AccountsWidget.routeName,
+            path: AccountsWidget.routePath,
+            builder: (context, params) => params.isEmpty
+                ? NavBarPage(initialPage: 'Accounts')
+                : NavBarPage(
+                    initialPage: 'Accounts',
+                    page: AccountsWidget(),
+                  ))
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
 

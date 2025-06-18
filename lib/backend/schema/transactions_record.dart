@@ -55,6 +55,11 @@ class TransactionsRecord extends FirestoreRecord {
   DocumentReference? get familyId => _familyId;
   bool hasFamilyId() => _familyId != null;
 
+  // "sub_category" field.
+  String? _subCategory;
+  String get subCategory => _subCategory ?? '';
+  bool hasSubCategory() => _subCategory != null;
+
   void _initializeFields() {
     _amount = castToType<double>(snapshotData['amount']);
     _category = snapshotData['category'] as String?;
@@ -64,6 +69,7 @@ class TransactionsRecord extends FirestoreRecord {
     _recordedBy = snapshotData['recorded_by'] as DocumentReference?;
     _cardRef = snapshotData['card_ref'] as DocumentReference?;
     _familyId = snapshotData['family_id'] as DocumentReference?;
+    _subCategory = snapshotData['sub_category'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -109,6 +115,7 @@ Map<String, dynamic> createTransactionsRecordData({
   DocumentReference? recordedBy,
   DocumentReference? cardRef,
   DocumentReference? familyId,
+  String? subCategory,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -120,6 +127,7 @@ Map<String, dynamic> createTransactionsRecordData({
       'recorded_by': recordedBy,
       'card_ref': cardRef,
       'family_id': familyId,
+      'sub_category': subCategory,
     }.withoutNulls,
   );
 
@@ -139,7 +147,8 @@ class TransactionsRecordDocumentEquality
         e1?.isPersonal == e2?.isPersonal &&
         e1?.recordedBy == e2?.recordedBy &&
         e1?.cardRef == e2?.cardRef &&
-        e1?.familyId == e2?.familyId;
+        e1?.familyId == e2?.familyId &&
+        e1?.subCategory == e2?.subCategory;
   }
 
   @override
@@ -151,7 +160,8 @@ class TransactionsRecordDocumentEquality
         e?.isPersonal,
         e?.recordedBy,
         e?.cardRef,
-        e?.familyId
+        e?.familyId,
+        e?.subCategory
       ]);
 
   @override

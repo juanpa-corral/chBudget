@@ -18,3 +18,35 @@ String? generateInvateCode() {
   var code = rng.nextInt(900000) + 100000;
   return code.toString();
 }
+
+List<String>? getJsonKeys(dynamic jsonData) {
+  if (jsonData == null) return [];
+  Map<String, dynamic> data;
+  if (jsonData is String) {
+    data = json.decode(jsonData);
+  } else if (jsonData is Map<String, dynamic>) {
+    data = jsonData;
+  } else {
+    return [];
+  }
+  return data.keys.toList();
+}
+
+List<String>? getSubcategories(
+  dynamic jsonData,
+  String mainCategoryKey,
+) {
+  if (jsonData == null || mainCategoryKey.isEmpty) return [];
+  Map<String, dynamic> data;
+  if (jsonData is String) {
+    data = json.decode(jsonData);
+  } else if (jsonData is Map<String, dynamic>) {
+    data = jsonData;
+  } else {
+    return [];
+  }
+  if (data.containsKey(mainCategoryKey) && data[mainCategoryKey] is List) {
+    return List<String>.from(data[mainCategoryKey]);
+  }
+  return [];
+}

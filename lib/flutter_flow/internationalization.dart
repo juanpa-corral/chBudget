@@ -644,6 +644,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '\$6.000.000',
       'es': '',
     },
+    '0a8trt6e': {
+      'en': 'Expense',
+      'es': '',
+    },
+    'h7etwpyn': {
+      'en': 'Income',
+      'es': '',
+    },
     'tiwp7vlv': {
       'en': 'Home',
       'es': '',
@@ -894,6 +902,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
+  // Accounts
+  {
+    '5ya7t5xn': {
+      'en': 'Accounts',
+      'es': '',
+    },
+    'e9meh3qq': {
+      'en': 'Add Card / Bank Account',
+      'es': '',
+    },
+    'qpjl3oe0': {
+      'en': 'Accounts',
+      'es': '',
+    },
+  },
   // AddCardForm
   {
     'u8gau2tn': {
@@ -941,7 +964,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
     'enfsn4op': {
-      'en': 'Dinners Club',
+      'en': 'Diners Club',
       'es': '',
     },
     'ws8fob68': {
@@ -976,7 +999,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
     'pns4ho43': {
-      'en': 'Launch on Archie\'s',
+      'en': 'Lunch on Archie\'s',
       'es': '',
     },
     'w1h4rbqy': {
@@ -991,8 +1014,32 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Date',
       'es': '',
     },
+    'wdacva3d': {
+      'en': 'Main Category',
+      'es': '',
+    },
+    'ds5obj1n': {
+      'en': 'Home...',
+      'es': '',
+    },
+    'b2nbdjpa': {
+      'en': 'Search...',
+      'es': '',
+    },
+    'cqswqix0': {
+      'en': 'Option 1',
+      'es': '',
+    },
+    'th63px59': {
+      'en': 'Option 2',
+      'es': '',
+    },
+    'qmn4cd1e': {
+      'en': 'Option 3',
+      'es': '',
+    },
     'aj0qoj63': {
-      'en': 'Category',
+      'en': 'Sub Category',
       'es': '',
     },
     '54ucjuhb': {
@@ -1025,6 +1072,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'jfqqig8x': {
       'en': 'Familiar',
+      'es': '',
+    },
+    'gq80qrn9': {
+      'en': 'Personal',
       'es': '',
     },
     '82653ocb': {
@@ -1069,6 +1120,88 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'po6we9ks': {
       'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+  },
+  // AddAccountForm
+  {
+    'zsjufqks': {
+      'en': 'Add New Account',
+      'es': '',
+    },
+    '4npg6edt': {
+      'en': 'Type',
+      'es': '',
+    },
+    '2f5ddq8m': {
+      'en': 'Credit Card',
+      'es': '',
+    },
+    '8d676ymh': {
+      'en': 'Bank Account',
+      'es': '',
+    },
+    '9htzr6fy': {
+      'en': 'Credit Card',
+      'es': '',
+    },
+    'xh6ql8tj': {
+      'en': 'Alias Account',
+      'es': '',
+    },
+    'gsp9hume': {
+      'en': 'My Account',
+      'es': '',
+    },
+    '8wd28rbb': {
+      'en': 'Last 4 Digits',
+      'es': '',
+    },
+    '4hh5im2a': {
+      'en': '1234',
+      'es': '',
+    },
+    'gwpukesu': {
+      'en': 'Network',
+      'es': '',
+    },
+    '9mhz2p44': {
+      'en': 'Select...',
+      'es': '',
+    },
+    'r6b1alpo': {
+      'en': 'Search...',
+      'es': '',
+    },
+    'mtznztp5': {
+      'en': 'Visa',
+      'es': '',
+    },
+    '8ghknmgd': {
+      'en': 'Mastercard',
+      'es': '',
+    },
+    'lb5ak9n0': {
+      'en': 'American Express',
+      'es': '',
+    },
+    'ym7pkkya': {
+      'en': 'Diners Club',
+      'es': '',
+    },
+    'xmlj4141': {
+      'en': 'Discover',
+      'es': '',
+    },
+    '0rwwzllt': {
+      'en': 'Add Account',
+      'es': '',
+    },
+  },
+  // AddNewAdvisement
+  {
+    'lob2nakv': {
+      'en': 'Add New Account',
       'es': '',
     },
   },

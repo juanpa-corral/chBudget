@@ -50,6 +50,11 @@ class CardsRecord extends FirestoreRecord {
   bool get isActive => _isActive ?? false;
   bool hasIsActive() => _isActive != null;
 
+  // "type" field.
+  String? _type;
+  String get type => _type ?? '';
+  bool hasType() => _type != null;
+
   void _initializeFields() {
     _cardAlias = snapshotData['card_alias'] as String?;
     _las4Digits = snapshotData['las_4_digits'] as String?;
@@ -58,6 +63,7 @@ class CardsRecord extends FirestoreRecord {
     _familyId = snapshotData['family_id'] as DocumentReference?;
     _network = snapshotData['network'] as String?;
     _isActive = snapshotData['is_active'] as bool?;
+    _type = snapshotData['type'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -101,6 +107,7 @@ Map<String, dynamic> createCardsRecordData({
   DocumentReference? familyId,
   String? network,
   bool? isActive,
+  String? type,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -111,6 +118,7 @@ Map<String, dynamic> createCardsRecordData({
       'family_id': familyId,
       'network': network,
       'is_active': isActive,
+      'type': type,
     }.withoutNulls,
   );
 
@@ -128,7 +136,8 @@ class CardsRecordDocumentEquality implements Equality<CardsRecord> {
         e1?.ownerId == e2?.ownerId &&
         e1?.familyId == e2?.familyId &&
         e1?.network == e2?.network &&
-        e1?.isActive == e2?.isActive;
+        e1?.isActive == e2?.isActive &&
+        e1?.type == e2?.type;
   }
 
   @override
@@ -139,7 +148,8 @@ class CardsRecordDocumentEquality implements Equality<CardsRecord> {
         e?.ownerId,
         e?.familyId,
         e?.network,
-        e?.isActive
+        e?.isActive,
+        e?.type
       ]);
 
   @override
